@@ -1,9 +1,8 @@
 using UnityEngine.Events;
 using UnityEngine;
 
-namespace AkimboMayhem
+namespace Moonsters
 {
-    [DisallowMultipleComponent]
     public class Health : MonoBehaviour, IDamageable
     {
         [SerializeField] private float gracePeriodInSeconds;

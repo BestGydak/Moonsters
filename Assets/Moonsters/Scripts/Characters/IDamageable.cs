@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace AkimboMayhem
+namespace Moonsters
 {
     public interface IDamageable
     {

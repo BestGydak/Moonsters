@@ -10,8 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 7074896139854277289}
   - component: {fileID: 1626570173204117977}
-  m_Layer: 0
-  m_Name: Sprite
+  m_Layer: 10
+  m_Name: Graphics
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -96,7 +96,7 @@ GameObject:
   - component: {fileID: 8299257826038437358}
   - component: {fileID: 3240352085649427397}
   - component: {fileID: 5797377924239137476}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Bullet
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -204,3 +204,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   liveTime: 5
+  randomDamage: {x: 2, y: 5}
+  target: 1
