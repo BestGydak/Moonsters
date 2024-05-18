@@ -701,6 +701,10 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.x
       value: 2.500001
       objectReference: {fileID: 0}
+    - target: {fileID: 5129256159237574685, guid: 77c6c772bb711f24dbee881bece3161d, type: 3}
+      propertyPath: m_PresetInfoIsWorld
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6057923208604442039, guid: 77c6c772bb711f24dbee881bece3161d, type: 3}
       propertyPath: m_Name
       value: UnitInfoCanvas

@@ -15101,6 +15101,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3861632042729875729, guid: 60650ad59fa79654dace69a88e56309e, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -15177,7 +15181,7 @@ GameObject:
   - component: {fileID: 122579001}
   - component: {fileID: 122579007}
   - component: {fileID: 122579006}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Borders
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -17253,11 +17257,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f66c67ae1194a504c8f04da13f7d1d89, type: 3}
---- !u!20 &397362686 stripped
-Camera:
-  m_CorrespondingSourceObject: {fileID: 8157780319378598815, guid: d8920346cc33d7145bb51aebeaa8c026, type: 3}
-  m_PrefabInstance: {fileID: 7523536387400313429}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &400295658
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -17521,6 +17520,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3861632042729875729, guid: 60650ad59fa79654dace69a88e56309e, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -17580,6 +17583,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3579553768376492729, guid: 60650ad59fa79654dace69a88e56309e, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3861632042729875729, guid: 60650ad59fa79654dace69a88e56309e, type: 3}
+      propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -17954,9 +17961,17 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 59443386618786712, guid: 9d104b8d997bfc244826d435afd884fe, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 306970997499452644, guid: 9d104b8d997bfc244826d435afd884fe, type: 3}
       propertyPath: m_Name
       value: Monster
+      objectReference: {fileID: 0}
+    - target: {fileID: 894500434437747805, guid: 9d104b8d997bfc244826d435afd884fe, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1169618051564555181, guid: 9d104b8d997bfc244826d435afd884fe, type: 3}
       propertyPath: m_BackGroundColor.a
@@ -18071,69 +18086,16 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 1322186548299294821, guid: d8920346cc33d7145bb51aebeaa8c026, type: 3}
-      propertyPath: m_AngularDrag
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1322186548299294821, guid: d8920346cc33d7145bb51aebeaa8c026, type: 3}
-      propertyPath: m_Constraints
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 2298320311370379586, guid: d8920346cc33d7145bb51aebeaa8c026, type: 3}
-      propertyPath: m_SortingOrder
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 4970985163186461923, guid: d8920346cc33d7145bb51aebeaa8c026, type: 3}
       propertyPath: m_Name
       value: Astronaut
       objectReference: {fileID: 0}
-    - target: {fileID: 5363238152746616239, guid: d8920346cc33d7145bb51aebeaa8c026, type: 3}
-      propertyPath: m_SortingOrder
-      value: 100
-      objectReference: {fileID: 0}
-    - target: {fileID: 8157780319378598815, guid: d8920346cc33d7145bb51aebeaa8c026, type: 3}
-      propertyPath: m_BackGroundColor.a
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8157780319378598815, guid: d8920346cc33d7145bb51aebeaa8c026, type: 3}
-      propertyPath: m_BackGroundColor.b
-      value: 0.2901961
-      objectReference: {fileID: 0}
-    - target: {fileID: 8157780319378598815, guid: d8920346cc33d7145bb51aebeaa8c026, type: 3}
-      propertyPath: m_BackGroundColor.g
-      value: 0.41176474
-      objectReference: {fileID: 0}
-    - target: {fileID: 8157780319378598815, guid: d8920346cc33d7145bb51aebeaa8c026, type: 3}
-      propertyPath: m_BackGroundColor.r
-      value: 0.43137258
-      objectReference: {fileID: 0}
-    - target: {fileID: 8832554027291977121, guid: d8920346cc33d7145bb51aebeaa8c026, type: 3}
-      propertyPath: camera
-      value: 
-      objectReference: {fileID: 397362686}
-    - target: {fileID: 8832554027291977121, guid: d8920346cc33d7145bb51aebeaa8c026, type: 3}
-      propertyPath: health
-      value: 
-      objectReference: {fileID: 943406013}
-    - target: {fileID: 8832554027291977121, guid: d8920346cc33d7145bb51aebeaa8c026, type: 3}
-      propertyPath: maxAmmo
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 8832554027291977121, guid: d8920346cc33d7145bb51aebeaa8c026, type: 3}
-      propertyPath: gunDistance
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8832554027291977121, guid: d8920346cc33d7145bb51aebeaa8c026, type: 3}
-      propertyPath: projectilePrefab
-      value: 
-      objectReference: {fileID: 5797377924239137476, guid: bbee467c44b424142bb37df7cc775b2b, type: 3}
-    - target: {fileID: 9001395686437669065, guid: d8920346cc33d7145bb51aebeaa8c026, type: 3}
-      propertyPath: m_IsTrigger
-      value: 1
+    - target: {fileID: 7169532058399336448, guid: d8920346cc33d7145bb51aebeaa8c026, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects:
-    - {fileID: 9119280781877430109, guid: d8920346cc33d7145bb51aebeaa8c026, type: 3}
+    m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d8920346cc33d7145bb51aebeaa8c026, type: 3}

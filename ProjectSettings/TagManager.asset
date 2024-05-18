@@ -4,9 +4,8 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - Astronaut
   - Monsters
-  - bullet
+  - Astronaut
   layers:
   - Default
   - TransparentFX
