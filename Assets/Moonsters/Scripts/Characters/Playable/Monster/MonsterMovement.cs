@@ -5,7 +5,7 @@ using UnityEngine.InputSystem;
 
 namespace Moonsters
 {
-    public class MonsterMovement : BaseCharacter
+    public class MonsterMovement : MonoBehaviour
     {
         [SerializeField] private Rigidbody2D rigidBody;
         [SerializeField] private float walkSpeed;
@@ -19,6 +19,44 @@ namespace Moonsters
         private StateMachine stateMachine;
         private PlayerInputWalkingState walkingState;
         private DashState dashState;
+
+        public float LastTimeDashed => dashState.LastTimeDashed;
+        public float RemainingDashCooldown => LastTimeDashed + dashCooldown - Time.time;
+
+        public Vector2 CurrentDirection
+        {
+            get
+            {
+                if (stateMachine.CurrentState == walkingState)
+                {
+                    return walkingState.MoveDirection;
+                }
+                if (stateMachine.CurrentState == dashState)
+                {
+                    return dashState.MoveDirection;
+                }
+                Debug.LogError("STUDID STATE!");
+                return Vector2.zero;
+            }
+        }
+        public float CurrentSpeed
+        {
+            get
+            {
+                if (CurrentDirection == Vector2.zero)
+                    return 0;
+                if (stateMachine.CurrentState == walkingState)
+                {
+                    return walkingState.Speed;
+                }
+                if (stateMachine.CurrentState == dashState)
+                {
+                    return dashState.Speed;
+                }
+                Debug.LogError("STUPID STATE!!!");
+                return 0;
+            }
+        }
 
         private void Awake()
         {
@@ -43,8 +81,8 @@ namespace Moonsters
         public void InitializeStateMachine()
         {
             stateMachine = new();
-            walkingState = new(this, walkSpeed);
-            dashState = new(this, dashSpeed);
+            walkingState = new(rigidBody, walkSpeed);
+            dashState = new(rigidBody, dashSpeed);
             stateMachine.AddTransition(walkingState, dashState, FromWalkingToDash);
             stateMachine.AddTransition(dashState, walkingState, FromDashToWalking);
         }
@@ -57,11 +95,6 @@ namespace Moonsters
         private bool FromDashToWalking()
         {
             return dashState.LastTimeDashed + dashDuration < Time.time;
-        }
-
-        public override void Move(Vector2 direction, float speed)
-        {
-            rigidBody.MovePosition((Vector2)transform.position + direction * speed * Time.fixedDeltaTime);
         }
         
         public void OnMove(InputAction.CallbackContext context)

@@ -5,14 +5,17 @@ namespace Moonsters
 {
     public class DashState : State
     {
-        private BaseCharacter character;
+        private Rigidbody2D character;
         private float speed;
 
         private Vector2 currentMoveDirection;
         private Vector2 dashMoveDirection;
 
+        public Vector2 MoveDirection => currentMoveDirection;
+        public float Speed => speed;
+
         public float LastTimeDashed { get; private set; }
-        public DashState(BaseCharacter character, float speed)
+        public DashState(Rigidbody2D character, float speed)
         {
             this.character = character;
             this.speed = speed;
@@ -26,7 +29,7 @@ namespace Moonsters
 
         public override void OnPhysics()
         {
-            character.Move(dashMoveDirection, speed);
+            character.MovePosition(character.position + dashMoveDirection * speed * Time.deltaTime);
         }
 
         public void OnMove(InputAction.CallbackContext callbackContext)

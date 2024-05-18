@@ -6,7 +6,7 @@ using UnityEngine.InputSystem;
 
 namespace Moonsters
 {
-    public class AstronautMovement : BaseCharacter
+    public class AstronautMovement : MonoBehaviour
     {
         [SerializeField] private Rigidbody2D rigidBody;
         [SerializeField] private float normalSpeed;
@@ -17,12 +17,46 @@ namespace Moonsters
         [SerializeField] private float staminaGainPerSeconds;
         [SerializeField] private float staminaConsumptionPerSeconds;
         [SerializeField] private float staminaToRest;
+        [SerializeField] private float currentStamina;
 
         private StateMachine stateMachine;
         private AstronautCanSprintState canSprintState;
         private AstronautTiredState tiredState;
 
-        [SerializeField] private float currentStamina;
+        public Vector2 CurrentDirection
+        {
+            get
+            {
+                if (stateMachine.CurrentState == canSprintState)
+                {
+                    return canSprintState.Direction;
+                }
+                if(stateMachine.CurrentState == tiredState)
+                {
+                    return tiredState.Direction;
+                }
+                Debug.LogError("STUDID STATE!");
+                return Vector2.zero;
+            }
+        }
+        public float CurrentSpeed
+        {
+            get
+            {
+                if (CurrentDirection == Vector2.zero)
+                    return 0;
+                if(stateMachine.CurrentState == canSprintState)
+                {
+                    return canSprintState.Speed;
+                }
+                if(stateMachine.CurrentState == tiredState)
+                {
+                    return tiredState.Speed;
+                }
+                Debug.LogError("STUPID STATE!!!");
+                return 0;
+            }
+        }
         public float CurrentStamina
         {
             get => currentStamina;
@@ -60,7 +94,13 @@ namespace Moonsters
         private void InitializeStateMachine()
         {
             stateMachine = new();
-            canSprintState = new(normalSpeed, sprintSpeed, staminaGainPerSeconds, staminaConsumptionPerSeconds, this);
+            canSprintState = new(
+                normalSpeed, 
+                sprintSpeed, 
+                staminaGainPerSeconds, 
+                staminaConsumptionPerSeconds, 
+                this, 
+                rigidBody);
             tiredState = new(tiredSpeed, staminaGainPerSeconds, this);
             stateMachine.AddTransition(canSprintState, tiredState, () => CurrentStamina <= 0);
             stateMachine.AddTransition(tiredState, canSprintState, () => CurrentStamina >= staminaToRest);
@@ -75,11 +115,6 @@ namespace Moonsters
         public void OnSprint(InputAction.CallbackContext context)
         {
             canSprintState.OnSprint(context);
-        }
-
-        public override void Move(Vector2 direction, float speed)
-        {
-            rigidBody.MovePosition((Vector2)transform.position + direction * speed * Time.fixedDeltaTime);
         }
     }
 }
