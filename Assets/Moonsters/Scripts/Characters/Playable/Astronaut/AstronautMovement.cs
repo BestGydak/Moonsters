@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.InputSystem;
+using UnityEngine.UI;
 
 namespace Moonsters
 {
@@ -11,6 +12,7 @@ namespace Moonsters
     {
         [SerializeField] private Rigidbody2D rigidBody;
         [SerializeField] private float normalSpeed;
+        [SerializeField] private Slider staminaSlider;
         [SerializeField] private Animator Animator;
 
         [Header("Sprint Settings")]
@@ -71,6 +73,7 @@ namespace Moonsters
                 var prevValue = currentStamina;
                 currentStamina = Mathf.Clamp(value, 0, maxStamina);
                 StaminaChanged?.Invoke(this, prevValue, currentStamina);
+                staminaSlider.value = currentStamina;
             }
         }
 
@@ -86,6 +89,10 @@ namespace Moonsters
         {
             CurrentStamina = maxStamina;
             stateMachine.SetState(canSprintState);
+            staminaSlider.minValue = 0;
+            staminaSlider.maxValue = maxStamina;
+            staminaSlider.value = 0;
+            
         }
 
         private void Update()

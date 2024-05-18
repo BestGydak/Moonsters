@@ -68,12 +68,32 @@ namespace Moonsters
         private void Awake()
         {
             InitializeStateMachine();    
+            Dashed.AddListener(OnDashed);
         }
 
+        private void OnDashed(MonsterMovement arg0)
+        {
+            StopAllCoroutines();
+            StartCoroutine(DashCoroutine());
+        }
+
+        private IEnumerator DashCoroutine()
+        {
+            dashSlider.gameObject.SetActive(true);
+            var value = 0f;
+            while (value < 1)
+            {
+                value += Time.deltaTime / dashCooldown;
+                dashSlider.value = value;
+                yield return null;
+            }
+            dashSlider.gameObject.SetActive(false);
+        }
+        
         private void Start()
         {
             stateMachine.SetState(walkingState);
-            dashSlider.maxValue = dashCooldown;
+            dashSlider.maxValue = 1;
             dashSlider.minValue = 0;
             dashSlider.value = 0;
             dashSlider.gameObject.SetActive(false);
@@ -82,19 +102,9 @@ namespace Moonsters
         private void Update()
         {
             stateMachine.OnLogic();
-            Animator.SetFloat("Horizontal", Direction.x);
-            Animator.SetFloat("Vertical", Direction.y);
+            Animator.SetFloat("Horizontal", Direction.y);
+            Animator.SetFloat("Vertical", Direction.x);
             Animator.SetFloat("Speed", Speed);
-
-            if (RemainingDashCooldown > 0)
-            {
-                dashSlider.gameObject.SetActive(true);
-                dashSlider.value = dashCooldown - RemainingDashCooldown;
-                if (RemainingDashCooldown == 0)
-                {
-                    dashSlider.gameObject.SetActive(false);
-                }
-            }
         }
 
         private void FixedUpdate()

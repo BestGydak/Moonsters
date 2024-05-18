@@ -39,6 +39,8 @@ public class AstronautShooting : MonoBehaviour
         get => currentAmmo;
     }
 
+    public int MaxAmmo => maxAmmo;
+
     public bool IsFullAmmo => CurrentAmmo == maxAmmo;
     
 

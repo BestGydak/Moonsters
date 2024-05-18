@@ -8,16 +8,17 @@ namespace Saw4uk.Scripts
     {
         [SerializeField] private AstronautShooting astronautShooting;
         [SerializeField] private TMP_Text ammoAmount;
-
+        private int maxAmmo;
         private void Awake()
         {
             astronautShooting.ammoChanged.AddListener(OnAmmoChanged);
             OnAmmoChanged(astronautShooting.CurrentAmmo);
+            maxAmmo = astronautShooting.MaxAmmo;
         }
 
         private void OnAmmoChanged(int arg0)
         {
-            ammoAmount.text = arg0.ToString();
+            ammoAmount.text = $"{arg0.ToString()}/{maxAmmo}";
         }
     }
 }
