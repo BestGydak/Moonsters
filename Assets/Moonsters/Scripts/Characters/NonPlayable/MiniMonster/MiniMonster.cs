@@ -69,6 +69,11 @@ namespace Moonsters
             stateMachine.AddTransition(attackingState, approachingState, () => DistanceToTarget() >= distanceToApproach);
         }
 
+        public void Die()
+        {
+            Destroy(gameObject);
+        }
+
         private float DistanceToTarget() => Vector2.Distance(target.transform.position, transform.position);
 
     }
