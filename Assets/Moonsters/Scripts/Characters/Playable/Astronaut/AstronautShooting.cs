@@ -8,6 +8,7 @@ using UnityEngine.InputSystem;
 public class AstronautShooting : MonoBehaviour
 {
     [SerializeField] private Camera camera;
+    [SerializeField] private Health health;
 
     [Header("Gun Settings")] 
     [SerializeField] private Transform gunRotator;
@@ -32,6 +33,11 @@ public class AstronautShooting : MonoBehaviour
     {
         remainingShootingDelay = 0;
         currentAmmo = maxAmmo;
+        
+        health.CurrentHealthChanged.AddListener((health, previousCurrentHealth, currentHealth) =>
+        {
+            Debug.Log($"Prev. heal: {previousCurrentHealth}; Curr. heal: {currentHealth}");
+        });
     }
 
     private void FixedUpdate()
@@ -85,5 +91,10 @@ public class AstronautShooting : MonoBehaviour
     {
         currentAmmo += Mathf.Clamp(count, 0, maxAmmo);
         Debug.Log($"Added ammo: {count}");
+    }
+
+    public void AddHealth(int healAmount)
+    {
+        health.CurrentHealth += healAmount;
     }
 }
