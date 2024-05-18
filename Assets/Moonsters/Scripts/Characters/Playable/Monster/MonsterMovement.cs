@@ -12,9 +12,6 @@ namespace Moonsters
 
         [SerializeField] private Animator Animator;
         
-        public Vector2 Direction => Vector2.down;
-        public float Speed => 0.5f;
-        
         [Header("Dash Settings")]
         [SerializeField] private float dashSpeed;
         [SerializeField] private float dashDuration;
@@ -29,7 +26,7 @@ namespace Moonsters
         public float LastTimeDashed => dashState.LastTimeDashed;
         public float RemainingDashCooldown => LastTimeDashed + dashCooldown - Time.time;
 
-        public Vector2 CurrentDirection
+        public Vector2 Direction
         {
             get
             {
@@ -45,11 +42,11 @@ namespace Moonsters
                 return Vector2.zero;
             }
         }
-        public float CurrentSpeed
+        public float Speed
         {
             get
             {
-                if (CurrentDirection == Vector2.zero)
+                if (Direction == Vector2.zero)
                     return 0;
                 if (stateMachine.CurrentState == walkingState)
                 {
@@ -77,8 +74,8 @@ namespace Moonsters
         private void Update()
         {
             stateMachine.OnLogic();
-            Animator.SetFloat("Horizontal", Direction.y);
-            Animator.SetFloat("Vertical", Direction.x);
+            Animator.SetFloat("Horizontal", Direction.x);
+            Animator.SetFloat("Vertical", Direction.y);
             Animator.SetFloat("Speed", Speed);
         }
 

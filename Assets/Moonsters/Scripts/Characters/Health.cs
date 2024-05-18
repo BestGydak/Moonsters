@@ -11,6 +11,7 @@ namespace Moonsters
 
         public UnityEvent<Health, int, int> CurrentHealthChanged;
         public UnityEvent<Health, int, int> MaxHealthChanged;
+        public UnityEvent<Health, int, int> Damaged;
         public UnityEvent<Health> Died;
 
         private float previousHitTime;
@@ -24,7 +25,7 @@ namespace Moonsters
                 if (!isAlive)
                     return;
                 var previousCurrentHealth = currentHealth;
-                currentHealth = value; 
+                currentHealth = Mathf.Min(maxHealth, value); 
                 CurrentHealthChanged?.Invoke(this, previousCurrentHealth, currentHealth);
                 if(currentHealth <= 0)
                 {
@@ -58,12 +59,16 @@ namespace Moonsters
             if (Time.time - previousHitTime < gracePeriodInSeconds)
                 return;
             previousHitTime = Time.time;
+            var prevHP = currentHealth;
             CurrentHealth -= damage;
+            Damaged.Invoke(this, prevHP, currentHealth);
         }
 
         public void DamageNoGracePeriod(int damage)
         {
+            var prevHP = currentHealth;
             CurrentHealth -= damage;
+            Damaged.Invoke(this, prevHP, currentHealth);
         }
 
         public void Damage(int damage, Vector2 attackDirection)

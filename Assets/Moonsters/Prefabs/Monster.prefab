@@ -13,6 +13,9 @@ GameObject:
   - component: {fileID: 8342558568756291289}
   - component: {fileID: 8032136772807823077}
   - component: {fileID: 9136775946171686573}
+  - component: {fileID: 5449950051804933093}
+  - component: {fileID: 5578047806705505613}
+  - component: {fileID: 8199044093506076086}
   m_Layer: 8
   m_Name: Monster
   m_TagString: Untagged
@@ -224,6 +227,54 @@ MonoBehaviour:
       m_Calls: []
     m_ActionId: 915b77b2-75be-4e14-b830-98120f5351a0
     m_ActionName: Player/AstroAction[/Keyboard/numpad0]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 5578047806705505613}
+        m_TargetAssemblyTypeName: Moonsters.MonsterAction, Assembly-CSharp
+        m_MethodName: OnButtonPressed
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 3f6df186-d4a9-46ac-b7bc-ee331bc9efb4
+    m_ActionName: Monster/SpawnMonster[/Keyboard/1]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 8199044093506076086}
+        m_TargetAssemblyTypeName: Moonsters.MonsterAction, Assembly-CSharp
+        m_MethodName: OnButtonPressed
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: d03a3f47-9f23-4757-9ef9-18c576e0e27b
+    m_ActionName: Monster/SpawnTurret[/Keyboard/2]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 5449950051804933093}
+        m_TargetAssemblyTypeName: Moonsters.MonsterAction, Assembly-CSharp
+        m_MethodName: OnButtonPressed
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: c46dea4d-1d6f-4676-a510-15af250431cf
+    m_ActionName: Monster/Attack[/Keyboard/space]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Monster
@@ -250,6 +301,63 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &5449950051804933093
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 306970997499452644}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 84edcf328ad46d54c9393fc8a697a138, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cooldown: 1
+  healthCost: 0
+  health: {fileID: 3805289354057968516}
+  <LastTimeUsed>k__BackingField: 0
+  damage: 5
+  attackRadius: 2
+  hitBoxMask:
+    serializedVersion: 2
+    m_Bits: 2048
+--- !u!114 &5578047806705505613
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 306970997499452644}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f75750427380de740b0f2f84477e29ba, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cooldown: 0.6
+  healthCost: 15
+  health: {fileID: 3805289354057968516}
+  <LastTimeUsed>k__BackingField: 0
+  miniMonsterPrefab: {fileID: 2333101531224714499, guid: 9e80602d2a14563499f6123cea992565, type: 3}
+  AstronautHealth: {fileID: 0}
+--- !u!114 &8199044093506076086
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 306970997499452644}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 87f17577dc2f86b409fd0520d72df29f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cooldown: 0.6
+  healthCost: 20
+  health: {fileID: 3805289354057968516}
+  <LastTimeUsed>k__BackingField: 0
+  turretPrefab: {fileID: 2185020102368106675, guid: 60650ad59fa79654dace69a88e56309e, type: 3}
+  AstronautHealth: {fileID: 0}
 --- !u!1 &1659844583789081421
 GameObject:
   m_ObjectHideFlags: 0
@@ -317,7 +425,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 0.5
+  m_Radius: 0.93
 --- !u!114 &3805289354057968516
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -337,6 +445,9 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   MaxHealthChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  Damaged:
     m_PersistentCalls:
       m_Calls: []
   Died:
@@ -370,7 +481,7 @@ Transform:
   m_GameObject: {fileID: 5748208550643809863}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.05000019, y: 0.0200001, z: 0.037168503}
+  m_LocalPosition: {x: -0.05000019, y: 0.0200001, z: -25}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -505,7 +616,7 @@ Transform:
   m_GameObject: {fileID: 8959393961623249643}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.33, y: -0.68, z: 10.0371685}
+  m_LocalPosition: {x: 0.029, y: 0.682, z: 10.0371685}
   m_LocalScale: {x: 5.6957693, y: 5.6957693, z: 5.6957693}
   m_ConstrainProportionsScale: 0
   m_Children: []
