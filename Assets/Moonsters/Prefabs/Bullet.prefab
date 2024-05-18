@@ -204,5 +204,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   liveTime: 5
-  randomDamage: {x: 5, y: 5}
+  randomDamage: {x: 5, y: 10}
   target: 1
