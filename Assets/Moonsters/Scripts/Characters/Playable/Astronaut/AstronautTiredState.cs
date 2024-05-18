@@ -9,6 +9,10 @@ namespace Moonsters
         private float normalSpeed;
         private float staminaGainPerSecond;
         private AstronautMovement astronaut;
+        private Rigidbody2D rigidBody;
+
+        public Vector2 Direction => walkingState.MoveDirection;
+        public float Speed => walkingState.Speed;
 
         public AstronautTiredState(
             float normalSpeed, 
@@ -18,7 +22,7 @@ namespace Moonsters
             this.normalSpeed = normalSpeed;
             this.staminaGainPerSecond = staminaGainPerSecond;
             this.astronaut = astronaut;
-            walkingState = new PlayerInputWalkingState(astronaut, normalSpeed);
+            walkingState = new PlayerInputWalkingState(rigidBody, normalSpeed);
         }
 
         public override void OnEnter()

@@ -11,6 +11,10 @@ namespace Moonsters
         private float staminaGainPerSecond;
         private float staminaConsumptionPerSecond;
         private AstronautMovement astronaut;
+        private Rigidbody2D rigidBody;
+
+        public float Speed => walkingState.Speed;
+        public Vector2 Direction => walkingState.MoveDirection;
 
         public bool IsSprinting { get; private set; }
         public AstronautCanSprintState(
@@ -18,13 +22,14 @@ namespace Moonsters
             float sprintSpeed,
             float staminaGainPerSecond,
             float staminaConsumptionPerSecond,
-            AstronautMovement astronaut)
+            AstronautMovement astronaut,
+            Rigidbody2D rigidBody)
         {
             this.normalSpeed = normalSpeed;
             this.sprintSpeed = sprintSpeed;
             this.astronaut = astronaut;
             this.staminaGainPerSecond = staminaGainPerSecond;
-            walkingState = new PlayerInputWalkingState(astronaut, normalSpeed);
+            walkingState = new PlayerInputWalkingState(rigidBody, normalSpeed);
             this.staminaConsumptionPerSecond = staminaConsumptionPerSecond;
         }
 
