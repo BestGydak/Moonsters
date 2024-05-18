@@ -13,15 +13,15 @@ public class AstronautShooting : MonoBehaviour
 
     [Header("Gun Settings")] 
     [SerializeField] private Transform gunRotator;
-
+    [SerializeField] private Animator gunAnimator;
     [SerializeField] private Transform gun;
     [SerializeField] private SpriteRenderer gunSpriteRenderer;
 
     [Header("Shoot Settings")] 
     [SerializeField] private Projectile projectilePrefab;
-    [SerializeField] private float projectileSpeed = 25f;
-    [SerializeField] private float shootingDelay = 0.5f;
-    [SerializeField] private int maxAmmo = 5;
+    [SerializeField] private float projectileSpeed;
+    [SerializeField] private float shootingDelay;
+    [SerializeField] private int maxAmmo;
 
     private bool isShooting;
     private float remainingShootingDelay;
@@ -57,6 +57,12 @@ public class AstronautShooting : MonoBehaviour
 
     private void FixedUpdate()
     {
+        remainingShootingDelay -= Time.fixedDeltaTime;
+    }
+
+    public void OnShoot(InputAction.CallbackContext context)
+    {
+        isShooting = context.performed;
         if (isShooting && remainingShootingDelay <= 0 && currentAmmo > 0)
         {
             var gunTransform = gunRotator.transform;
@@ -64,15 +70,7 @@ public class AstronautShooting : MonoBehaviour
             var direction = new Vector3(Mathf.Cos(rads), Mathf.Sin(rads), 0);
             Shoot(direction, gun.position);
         }
-        else
-        {
-            remainingShootingDelay -= Time.fixedDeltaTime;
-        }
-    }
-
-    public void OnShoot(InputAction.CallbackContext context)
-    {
-        isShooting = context.performed;
+        
     }
 
     public void OnLook(InputAction.CallbackContext context)
@@ -98,6 +96,7 @@ public class AstronautShooting : MonoBehaviour
         CurrentAmmo -= 1;
         remainingShootingDelay = shootingDelay;
         
+        gunAnimator.SetTrigger("Fire");
         Debug.Log($"Current ammo amount: {CurrentAmmo}");
     }
 

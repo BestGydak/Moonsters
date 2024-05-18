@@ -10,6 +10,7 @@ namespace Moonsters
         [SerializeField] private float speed;
         [SerializeField] private float distanceToAttack;
         [SerializeField] private float distanceToApproach;
+        [SerializeField] private Animator Animator;
         [Header("Attacking Settings")]
         [SerializeField] private Health healthTarget;
         [SerializeField] private int damage;
@@ -61,6 +62,9 @@ namespace Moonsters
         private void Update()
         {
             stateMachine.OnLogic();
+            Animator.SetFloat("Horizontal", Direction.y);
+            Animator.SetFloat("Vertical", Direction.x);
+            Animator.SetFloat("Speed", Speed);
         }
 
         private void FixedUpdate()
