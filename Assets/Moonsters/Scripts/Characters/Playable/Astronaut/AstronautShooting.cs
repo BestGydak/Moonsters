@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Moonsters;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.InputSystem;
 
 public class AstronautShooting : MonoBehaviour
@@ -25,14 +26,26 @@ public class AstronautShooting : MonoBehaviour
     private bool isShooting;
     private float remainingShootingDelay;
     private int currentAmmo;
+
+    public UnityEvent<int> ammoChanged;
     
-    public int CurrentAmmo => currentAmmo;
-    public bool IsFullAmmo => currentAmmo == maxAmmo;
+    public int CurrentAmmo
+    {
+        set
+        {
+            currentAmmo = value;
+            ammoChanged.Invoke(currentAmmo);
+        }
+        get => currentAmmo;
+    }
+
+    public bool IsFullAmmo => CurrentAmmo == maxAmmo;
+    
 
     private void Awake()
     {
         remainingShootingDelay = 0;
-        currentAmmo = maxAmmo;
+        CurrentAmmo = maxAmmo;
         
         health.CurrentHealthChanged.AddListener((health, previousCurrentHealth, currentHealth) =>
         {
@@ -80,15 +93,15 @@ public class AstronautShooting : MonoBehaviour
         var bullet = Instantiate(projectilePrefab, shootPosition, gunRotator.rotation);
         bullet.LaunchProjectile(direction, projectileSpeed);
 
-        currentAmmo -= 1;
+        CurrentAmmo -= 1;
         remainingShootingDelay = shootingDelay;
         
-        Debug.Log($"Current ammo amount: {currentAmmo}");
+        Debug.Log($"Current ammo amount: {CurrentAmmo}");
     }
 
     public void AddAmmo(int count)
     {
-        currentAmmo += Mathf.Clamp(count, 0, maxAmmo);
+        CurrentAmmo += Mathf.Clamp(count, 0, maxAmmo);
         Debug.Log($"Added ammo: {count}");
     }
 

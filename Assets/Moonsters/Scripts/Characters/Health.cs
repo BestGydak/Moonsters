@@ -1,10 +1,14 @@
+using System;
 using UnityEngine.Events;
 using UnityEngine;
+using UnityEngine.UI;
 
 namespace Moonsters
 {
     public class Health : MonoBehaviour, IDamageable
     {
+        [SerializeField] private Slider slider;
+        
         [SerializeField] private float gracePeriodInSeconds;
         [SerializeField] private int maxHealth;
         [SerializeField] private int currentHealth;
@@ -31,6 +35,7 @@ namespace Moonsters
                 var previousCurrentHealth = currentHealth;
                 currentHealth = Mathf.Clamp(value, 0, MaxHealth); 
                 CurrentHealthChanged?.Invoke(this, previousCurrentHealth, currentHealth);
+                slider.value = value;
                 if(currentHealth <= 0)
                 {
                    isAlive = false;
@@ -56,6 +61,13 @@ namespace Moonsters
             {
                 return maxHealth;
             }
+        }
+
+        private void Awake()
+        {
+            slider.maxValue = MaxHealth;
+            slider.minValue = 0;
+            slider.value = currentHealth;
         }
 
         public void Damage(int damage)

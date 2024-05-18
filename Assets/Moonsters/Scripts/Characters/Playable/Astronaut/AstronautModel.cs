@@ -14,7 +14,7 @@ namespace Moonsters
         
         public void OnAction(InputAction.CallbackContext context)
         {
-            if(context.performed)
+            if(context.performed && currentGenerator != null)
                 currentGenerator.StartAction();
         }
     }

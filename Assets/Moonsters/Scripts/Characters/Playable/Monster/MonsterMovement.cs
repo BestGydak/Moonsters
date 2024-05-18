@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.InputSystem;
+using UnityEngine.UI;
 
 namespace Moonsters
 {
@@ -12,6 +13,7 @@ namespace Moonsters
         [SerializeField] private float walkSpeed;
 
         [SerializeField] private Animator Animator;
+        [SerializeField] private Slider dashSlider;
         
         [Header("Dash Settings")]
         [SerializeField] private float dashSpeed;
@@ -71,6 +73,10 @@ namespace Moonsters
         private void Start()
         {
             stateMachine.SetState(walkingState);
+            dashSlider.maxValue = dashCooldown;
+            dashSlider.minValue = 0;
+            dashSlider.value = 0;
+            dashSlider.gameObject.SetActive(false);
         }
 
         private void Update()
@@ -79,6 +85,16 @@ namespace Moonsters
             Animator.SetFloat("Horizontal", Direction.x);
             Animator.SetFloat("Vertical", Direction.y);
             Animator.SetFloat("Speed", Speed);
+
+            if (RemainingDashCooldown > 0)
+            {
+                dashSlider.gameObject.SetActive(true);
+                dashSlider.value = dashCooldown - RemainingDashCooldown;
+                if (RemainingDashCooldown == 0)
+                {
+                    dashSlider.gameObject.SetActive(false);
+                }
+            }
         }
 
         private void FixedUpdate()
