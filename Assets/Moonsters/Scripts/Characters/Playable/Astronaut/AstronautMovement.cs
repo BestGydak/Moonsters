@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.InputSystem;
+using UnityEngine.Serialization;
 
 namespace Moonsters
 {
@@ -17,12 +18,12 @@ namespace Moonsters
         [SerializeField] private float staminaGainPerSeconds;
         [SerializeField] private float staminaConsumptionPerSeconds;
         [SerializeField] private float staminaToRest;
+        [SerializeField] private float currentStamina;
 
         private StateMachine stateMachine;
         private AstronautCanSprintState canSprintState;
         private AstronautTiredState tiredState;
-
-        [SerializeField] private float currentStamina;
+        
         public float CurrentStamina
         {
             get => currentStamina;

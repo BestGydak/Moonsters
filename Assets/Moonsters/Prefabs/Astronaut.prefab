@@ -94,6 +94,7 @@ GameObject:
   m_Component:
   - component: {fileID: 897293670762228239}
   - component: {fileID: 5711420434047227856}
+  - component: {fileID: 8832554027291977121}
   - component: {fileID: 4950937774683956327}
   - component: {fileID: 1322186548299294821}
   - component: {fileID: 9001395686437669065}
@@ -144,6 +145,23 @@ MonoBehaviour:
   StaminaChanged:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &8832554027291977121
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4970985163186461923}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8369906411f068648aec25a7900ae258, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  camera: {fileID: 0}
+  projectilePrefab: {fileID: 0}
+  distanceToGun: 1
+  bulletSpeed: 25
+  shootingDelay: 0.5
 --- !u!114 &4950937774683956327
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -249,6 +267,38 @@ MonoBehaviour:
       m_Calls: []
     m_ActionId: 747b6a65-cfdd-4448-bb03-a7d8f89e7e89
     m_ActionName: Monster/MonsterDash[/Keyboard/shift]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 8832554027291977121}
+        m_TargetAssemblyTypeName: AstronautShooting, Assembly-CSharp
+        m_MethodName: OnShoot
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 85e5c2b3-b30e-466e-bc8a-64ec519ce47b
+    m_ActionName: Player/AstroShoot[/Mouse/leftButton]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 8832554027291977121}
+        m_TargetAssemblyTypeName: AstronautShooting, Assembly-CSharp
+        m_MethodName: OnLook
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 625b8597-1f96-4a52-a7ab-eea9977906ea
+    m_ActionName: Player/AstroLook[/Mouse/position]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Player
