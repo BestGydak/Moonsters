@@ -20,6 +20,8 @@ namespace Moonsters
         private Path path;
         private int currentDestinationNodeId;
 
+        public Vector2 Direction { get; private set; }
+
         public PathfindingApproachingState(
             float speed,
             Rigidbody2D controller, 
@@ -94,6 +96,7 @@ namespace Moonsters
 
             var desiredDirection = GetDirectionToNode();
             var finalDirection = sba.CalculateDirection(desiredDirection).normalized;
+            Direction = finalDirection;
             controller.MovePosition(controller.position + finalDirection * speed * Time.fixedDeltaTime);
         }
 
