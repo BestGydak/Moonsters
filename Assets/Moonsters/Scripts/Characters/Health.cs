@@ -62,6 +62,11 @@ namespace AkimboMayhem
             CurrentHealth -= damage;
         }
 
+        public void DamageNoGracePeriod(int damage)
+        {
+            CurrentHealth -= damage;
+        }
+
         public void Damage(int damage, Vector2 attackDirection)
         {
             Damage(damage);

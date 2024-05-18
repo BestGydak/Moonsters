@@ -40,7 +40,7 @@ namespace Moonsters
 
         public override void OnExit()
         {
-            walkingState.OnEnter();
+            walkingState.OnExit();
         }
 
         public override void OnLogic()

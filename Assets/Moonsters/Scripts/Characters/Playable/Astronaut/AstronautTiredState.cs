@@ -16,7 +16,8 @@ namespace Moonsters
 
         public AstronautTiredState(
             float normalSpeed, 
-            float staminaGainPerSecond, 
+            float staminaGainPerSecond,
+            Rigidbody2D rigidBody,
             AstronautMovement astronaut)
         {
             this.normalSpeed = normalSpeed;

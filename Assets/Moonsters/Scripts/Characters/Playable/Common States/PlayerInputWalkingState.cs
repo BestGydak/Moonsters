@@ -22,7 +22,7 @@ namespace Moonsters
 
         public void OnMove(InputAction.CallbackContext context)
         {
-            MoveDirection = context.ReadValue<Vector2>();
+            MoveDirection = context.ReadValue<Vector2>().normalized;
         }
     }
 }
