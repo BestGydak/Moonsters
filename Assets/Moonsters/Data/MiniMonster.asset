@@ -12,13 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bb3597f8d6ac8c743bc60bc2b81d2f4d, type: 3}
   m_Name: MiniMonster
   m_EditorClassIdentifier: 
-  _agentRadius: 0.5
+  _agentRadius: 1
   _obstacles:
   - _layer:
       serializedVersion: 2
       m_Bits: 512
-    _radius: 0.5
+    _radius: 1.2
   - _layer:
       serializedVersion: 2
-      m_Bits: 0
-    _radius: 0.5
+      m_Bits: 64
+    _radius: 1.2
