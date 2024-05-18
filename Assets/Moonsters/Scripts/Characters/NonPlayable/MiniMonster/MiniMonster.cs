@@ -15,7 +15,6 @@ namespace Moonsters
         [SerializeField] private int damage;
         [SerializeField] private float attackCooldown;
         [Header("Pathfinding Settings")]
-        [SerializeField] private GameObject target;
         [SerializeField] private Seeker seeker;
         [SerializeField] private SteeringBehaviourAgent sba;
         [SerializeField] private float distanceToReachNode;
@@ -24,12 +23,6 @@ namespace Moonsters
         private StateMachine stateMachine;
         private PathfindingApproachingState approachingState;
         private AttackingState attackingState;
-
-        public GameObject Target
-        {
-            get => target;
-            set => target = value;
-        }
 
         public Health HealthTarget
         {
@@ -59,7 +52,7 @@ namespace Moonsters
             approachingState = new(
                 speed, 
                 rigidBody, 
-                target, 
+                healthTarget.gameObject, 
                 seeker, 
                 sba, 
                 distanceToReachNode, 
@@ -74,7 +67,7 @@ namespace Moonsters
             Destroy(gameObject);
         }
 
-        private float DistanceToTarget() => Vector2.Distance(target.transform.position, transform.position);
+        private float DistanceToTarget() => Vector2.Distance(healthTarget.gameObject.transform.position, transform.position);
 
     }
 }

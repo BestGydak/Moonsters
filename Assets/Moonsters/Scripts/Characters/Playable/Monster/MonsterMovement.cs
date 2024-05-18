@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.UI;
 
 namespace Moonsters
 {
@@ -11,9 +12,7 @@ namespace Moonsters
         [SerializeField] private float walkSpeed;
 
         [SerializeField] private Animator Animator;
-        
-        public Vector2 Direction => Vector2.down;
-        public float Speed => 0.5f;
+        [SerializeField] private Slider dashSlider;
         
         [Header("Dash Settings")]
         [SerializeField] private float dashSpeed;
@@ -29,7 +28,7 @@ namespace Moonsters
         public float LastTimeDashed => dashState.LastTimeDashed;
         public float RemainingDashCooldown => LastTimeDashed + dashCooldown - Time.time;
 
-        public Vector2 CurrentDirection
+        public Vector2 Direction
         {
             get
             {
@@ -45,11 +44,11 @@ namespace Moonsters
                 return Vector2.zero;
             }
         }
-        public float CurrentSpeed
+        public float Speed
         {
             get
             {
-                if (CurrentDirection == Vector2.zero)
+                if (Direction == Vector2.zero)
                     return 0;
                 if (stateMachine.CurrentState == walkingState)
                 {
@@ -72,14 +71,28 @@ namespace Moonsters
         private void Start()
         {
             stateMachine.SetState(walkingState);
+            dashSlider.maxValue = dashCooldown;
+            dashSlider.minValue = 0;
+            dashSlider.value = 0;
+            dashSlider.gameObject.SetActive(false);
         }
 
         private void Update()
         {
             stateMachine.OnLogic();
-            Animator.SetFloat("Horizontal", Direction.y);
-            Animator.SetFloat("Vertical", Direction.x);
+            Animator.SetFloat("Horizontal", Direction.x);
+            Animator.SetFloat("Vertical", Direction.y);
             Animator.SetFloat("Speed", Speed);
+
+            if (RemainingDashCooldown > 0)
+            {
+                dashSlider.gameObject.SetActive(true);
+                dashSlider.value = dashCooldown - RemainingDashCooldown;
+                if (RemainingDashCooldown == 0)
+                {
+                    dashSlider.gameObject.SetActive(false);
+                }
+            }
         }
 
         private void FixedUpdate()
