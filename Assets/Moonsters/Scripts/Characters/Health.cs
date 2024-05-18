@@ -25,7 +25,7 @@ namespace Moonsters
                 if (!isAlive)
                     return;
                 var previousCurrentHealth = currentHealth;
-                currentHealth = Mathf.Min(maxHealth, value); 
+                currentHealth = Mathf.Clamp(value, 0, MaxHealth); 
                 CurrentHealthChanged?.Invoke(this, previousCurrentHealth, currentHealth);
                 if(currentHealth <= 0)
                 {
