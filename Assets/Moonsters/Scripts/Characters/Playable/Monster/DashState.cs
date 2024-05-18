@@ -1,10 +1,13 @@
 ﻿using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.InputSystem;
 
 namespace Moonsters
 {
     public class DashState : State
     {
+        private UnityEvent<MonsterMovement> dashEvent;
+        private MonsterMovement monsterMovement;
         private Rigidbody2D character;
         private float speed;
 
@@ -15,14 +18,20 @@ namespace Moonsters
         public float Speed => speed;
 
         public float LastTimeDashed { get; private set; }
-        public DashState(Rigidbody2D character, float speed)
+        public DashState(Rigidbody2D character, 
+            float speed, 
+            MonsterMovement monsterMovement,
+            UnityEvent<MonsterMovement> dashEvent)
         {
             this.character = character;
             this.speed = speed;
+            this.dashEvent = dashEvent;
+            this.monsterMovement = monsterMovement;
         }
 
         public override void OnEnter()
         {
+            dashEvent.Invoke(monsterMovement);
             LastTimeDashed = Time.time;
             dashMoveDirection = currentMoveDirection;
         }

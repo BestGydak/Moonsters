@@ -17,7 +17,11 @@ namespace Moonsters
         private float previousHitTime;
         private bool isAlive = true;
 
-        public bool IsAlive => isAlive;
+        public bool IsAlive
+        {
+            get => isAlive;
+            set => isAlive = value;
+        }
         public int CurrentHealth
         {
             set 

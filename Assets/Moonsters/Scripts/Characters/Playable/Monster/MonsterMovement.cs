@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.InputSystem;
 
 namespace Moonsters
@@ -23,6 +24,7 @@ namespace Moonsters
         private PlayerInputWalkingState walkingState;
         private DashState dashState;
 
+        public UnityEvent<MonsterMovement> Dashed;
         public float LastTimeDashed => dashState.LastTimeDashed;
         public float RemainingDashCooldown => LastTimeDashed + dashCooldown - Time.time;
 
@@ -88,7 +90,7 @@ namespace Moonsters
         {
             stateMachine = new();
             walkingState = new(rigidBody, walkSpeed);
-            dashState = new(rigidBody, dashSpeed);
+            dashState = new(rigidBody, dashSpeed, this, Dashed);
             stateMachine.AddTransition(walkingState, dashState, FromWalkingToDash);
             stateMachine.AddTransition(dashState, walkingState, FromDashToWalking);
         }
@@ -112,6 +114,11 @@ namespace Moonsters
         public void OnDash(InputAction.CallbackContext context)
         {
             isDashed = context.performed;
+        }
+
+        public void OnDie(Health health)
+        {
+            gameObject.SetActive(false);
         }
     }
 }
