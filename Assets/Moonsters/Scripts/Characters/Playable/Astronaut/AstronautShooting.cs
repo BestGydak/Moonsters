@@ -73,7 +73,6 @@ public class AstronautShooting : MonoBehaviour
         var rad = gunRotator.rotation.eulerAngles.z * Mathf.Deg2Rad;
 
         gunSpriteRenderer.flipY = Mathf.Sin(rad) > 0;
-        gunSpriteRenderer.sortingOrder = Mathf.Cos(rad) > 0 ? 0 : 1;
     }
 
     private void Shoot(Vector2 direction, Vector3 shootPosition)

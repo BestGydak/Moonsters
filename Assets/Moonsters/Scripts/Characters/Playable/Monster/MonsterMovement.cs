@@ -9,6 +9,12 @@ namespace Moonsters
     {
         [SerializeField] private Rigidbody2D rigidBody;
         [SerializeField] private float walkSpeed;
+
+        [SerializeField] private Animator Animator;
+        
+        public Vector2 Direction => Vector2.down;
+        public float Speed => 0.5f;
+        
         [Header("Dash Settings")]
         [SerializeField] private float dashSpeed;
         [SerializeField] private float dashDuration;
@@ -71,6 +77,9 @@ namespace Moonsters
         private void Update()
         {
             stateMachine.OnLogic();
+            Animator.SetFloat("Horizontal", Direction.y);
+            Animator.SetFloat("Vertical", Direction.x);
+            Animator.SetFloat("Speed", Speed);
         }
 
         private void FixedUpdate()

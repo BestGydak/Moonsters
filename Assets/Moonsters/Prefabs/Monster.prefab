@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 7266684025466955933}
   - component: {fileID: 8342558568756291289}
   - component: {fileID: 8032136772807823077}
+  - component: {fileID: 9136775946171686573}
   m_Layer: 8
   m_Name: Monster
   m_TagString: Untagged
@@ -51,6 +52,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rigidBody: {fileID: 8342558568756291289}
   walkSpeed: 9
+  Animator: {fileID: 9136775946171686573}
   dashSpeed: 25
   dashDuration: 0.3
   dashCooldown: 1
@@ -218,11 +220,36 @@ MonoBehaviour:
       m_Calls: []
     m_ActionId: 625b8597-1f96-4a52-a7ab-eea9977906ea
     m_ActionName: Player/AstroLook[/Mouse/position]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 915b77b2-75be-4e14-b830-98120f5351a0
+    m_ActionName: Player/AstroAction[/Keyboard/numpad0]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Monster
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
+--- !u!95 &9136775946171686573
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 306970997499452644}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 26b9d65f537fccd4eb0ed63d7839a062, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &1659844583789081421
 GameObject:
   m_ObjectHideFlags: 0
@@ -478,8 +505,8 @@ Transform:
   m_GameObject: {fileID: 8959393961623249643}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 10.0371685}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: -0.33, y: -0.68, z: 10.0371685}
+  m_LocalScale: {x: 5.6957693, y: 5.6957693, z: 5.6957693}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 6131870236454545681}
@@ -525,8 +552,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b, type: 3}
-  m_Color: {r: 1, g: 0, b: 0, a: 1}
+  m_Sprite: {fileID: -393484847, guid: b030938f8e4061c43be7e5a21989cf4b, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
