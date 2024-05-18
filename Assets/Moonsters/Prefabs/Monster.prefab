@@ -373,6 +373,7 @@ GameObject:
   - component: {fileID: 6421169762288402363}
   - component: {fileID: 1435331302582717404}
   - component: {fileID: 3805289354057968516}
+  - component: {fileID: 20595006957081675}
   m_Layer: 11
   m_Name: Hitbox
   m_TagString: Monsters
@@ -458,6 +459,22 @@ MonoBehaviour:
   Died:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &20595006957081675
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1659844583789081421}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ad3d5414070fc74418d167e62da3a12a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  randomHealAmount: {x: 10, y: 10}
+  healIntervalInSeconds: 1
+  health: {fileID: 3805289354057968516}
+  healDelayAfterHit: 3
 --- !u!1 &8959393961623249643
 GameObject:
   m_ObjectHideFlags: 0
