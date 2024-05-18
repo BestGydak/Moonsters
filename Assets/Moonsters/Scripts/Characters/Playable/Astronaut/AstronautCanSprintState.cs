@@ -1,46 +1,15 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-using UnityEngine.Events;
+﻿using UnityEngine;
 using UnityEngine.InputSystem;
 
 namespace Moonsters
 {
-    public class AstronautMovement : BaseCharacter
-    {
-        [SerializeField] private Rigidbody2D rigidBody;
-        [SerializeField] private float normalSpeed;
-        [Header("Sprint Settings")]
-        [SerializeField] private float sprintSpeed;
-        [SerializeField] private float maxStamina;
-        [SerializeField] private float staminaGainPerSeconds;
-        [SerializeField] private float staminaConsumptionPerSeconds;
-
-        private float currentStamina;
-        public float CurrentStamina
-        {
-            get => currentStamina;
-            set
-            {
-                var prevValue = currentStamina;
-                currentStamina = Mathf.Max(0, value);
-                StaminaChanged?.Invoke(this, prevValue, currentStamina);
-            }
-        }
-
-        public UnityEvent<AstronautMovement, float, float> StaminaChanged;
-        public override void Move(Vector2 direction, float speed)
-        {
-            rigidBody.MovePosition((Vector2)transform.position + direction * speed * Time.fixedDeltaTime);
-        }
-    }
-
     public class AstronautCanSprintState : State
     {
         private PlayerInputWalkingState walkingState;
         private float normalSpeed;
         private float sprintSpeed;
         private float staminaGainPerSecond;
+        private float staminaConsumptionPerSecond;
         private AstronautMovement astronaut;
 
         public bool IsSprinting { get; private set; }
@@ -48,6 +17,7 @@ namespace Moonsters
             float normalSpeed, 
             float sprintSpeed,
             float staminaGainPerSecond,
+            float staminaConsumptionPerSecond,
             AstronautMovement astronaut)
         {
             this.normalSpeed = normalSpeed;
@@ -55,6 +25,7 @@ namespace Moonsters
             this.astronaut = astronaut;
             this.staminaGainPerSecond = staminaGainPerSecond;
             walkingState = new PlayerInputWalkingState(astronaut, normalSpeed);
+            this.staminaConsumptionPerSecond = staminaConsumptionPerSecond;
         }
 
         public override void OnEnter()
@@ -76,13 +47,20 @@ namespace Moonsters
             else
             {
                 walkingState.Speed = normalSpeed;
-                astronaut.CurrentStamina += staminaGainPerSecond * Time.deltaTime;
             }
             walkingState.OnLogic();
         }
 
         public override void OnPhysics()
         {
+            if(IsSprinting && walkingState.MoveDirection != Vector2.zero)
+            {
+                astronaut.CurrentStamina -= staminaConsumptionPerSecond * Time.fixedDeltaTime;
+            }
+            else
+            {
+                astronaut.CurrentStamina += staminaGainPerSecond * Time.fixedDeltaTime;
+            }
             walkingState.OnPhysics();
         }
 

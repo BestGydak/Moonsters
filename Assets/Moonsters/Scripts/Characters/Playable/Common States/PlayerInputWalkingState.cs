@@ -31,6 +31,6 @@ namespace Moonsters
 
     public abstract class BaseCharacter : MonoBehaviour
     {
-        public  abstract void Move(Vector2 direction, float speed);
+        public abstract void Move(Vector2 direction, float speed);
     }
 }
