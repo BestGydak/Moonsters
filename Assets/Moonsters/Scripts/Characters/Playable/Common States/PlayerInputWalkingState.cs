@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -17,7 +18,15 @@ namespace Moonsters
 
         public override void OnPhysics()
         {
-            character.MovePosition(character.position + MoveDirection * Speed * Time.fixedDeltaTime);
+            try
+            {
+                character.MovePosition(character.position + MoveDirection * Speed * Time.fixedDeltaTime);
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e);
+                throw;
+            }
         }
 
         public void OnMove(InputAction.CallbackContext context)
