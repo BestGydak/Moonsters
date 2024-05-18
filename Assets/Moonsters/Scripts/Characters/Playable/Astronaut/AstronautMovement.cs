@@ -111,7 +111,7 @@ namespace Moonsters
                 staminaConsumptionPerSeconds, 
                 this, 
                 rigidBody);
-            tiredState = new(tiredSpeed, staminaGainPerSeconds, this);
+            tiredState = new(tiredSpeed, staminaGainPerSeconds, rigidBody, this);
             stateMachine.AddTransition(canSprintState, tiredState, () => CurrentStamina <= 0);
             stateMachine.AddTransition(tiredState, canSprintState, () => CurrentStamina >= staminaToRest);
         }

@@ -34,7 +34,7 @@ namespace Moonsters
 
         public void OnMove(InputAction.CallbackContext callbackContext)
         {
-            currentMoveDirection = callbackContext.ReadValue<Vector2>();
+            currentMoveDirection = callbackContext.ReadValue<Vector2>().normalized;
         }
     }
 }

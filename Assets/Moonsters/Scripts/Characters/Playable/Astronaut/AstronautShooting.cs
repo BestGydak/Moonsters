@@ -4,52 +4,83 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.Serialization;
 
-public class AstronautShooting : MonoBehaviour
+namespace Moonsters
 {
-    [SerializeField] private Camera camera;
-    [Header("Shoot Settings")] 
-    [SerializeField] private Projectile projectilePrefab;
-    [SerializeField] private float distanceToGun = 1f;
-    [SerializeField] private float bulletSpeed = 25f;
-    [SerializeField] private float shootingDelay = 0.5f;
-
-    private bool isShooting;
-    private float remainingShootingDelay;
-
-    private void FixedUpdate()
+    public class AstronautShooting : MonoBehaviour
     {
-        if (isShooting && remainingShootingDelay <= 0)
-        {
-            var playerTransform = transform;
-            var rads = (playerTransform.rotation.eulerAngles.z + 90) * Mathf.Deg2Rad;
-            var direction = new Vector3(Mathf.Cos(rads), Mathf.Sin(rads), 0);
-        
-            var bullet = Instantiate(projectilePrefab, playerTransform.position + (direction * distanceToGun), playerTransform.rotation);
-            bullet.Shoot(direction, bulletSpeed);
+        [SerializeField] private Camera camera;
 
+        [Header("Gun Settings")]
+        [SerializeField] private Transform gunRotator;
+
+        [SerializeField] private Transform gun;
+        [SerializeField] private SpriteRenderer gunSpriteRenderer;
+
+        [Header("Shoot Settings")]
+        [SerializeField] private Projectile projectilePrefab;
+        [SerializeField] private float projectileSpeed = 25f;
+        [SerializeField] private float shootingDelay = 0.5f;
+        [SerializeField] private int maxAmmo = 5;
+
+        private bool isShooting;
+        private float remainingShootingDelay;
+        private int currentAmmo;
+
+        private void Awake()
+        {
+            remainingShootingDelay = 0;
+            currentAmmo = maxAmmo;
+        }
+
+        private void FixedUpdate()
+        {
+            if (isShooting && remainingShootingDelay <= 0 && currentAmmo > 0)
+            {
+                var gunTransform = gunRotator.transform;
+                var rads = (gunTransform.rotation.eulerAngles.z + 90) * Mathf.Deg2Rad;
+                var direction = new Vector3(Mathf.Cos(rads), Mathf.Sin(rads), 0);
+                Shoot(direction, gun.position);
+            }
+            else
+            {
+                remainingShootingDelay -= Time.fixedDeltaTime;
+            }
+        }
+
+        public void OnShoot(InputAction.CallbackContext context)
+        {
+            isShooting = context.performed;
+        }
+
+        public void OnLook(InputAction.CallbackContext context)
+        {
+            var mouseScreenPosition = context.ReadValue<Vector2>();
+            var mouseWordPosition = camera.ScreenToWorldPoint(mouseScreenPosition);
+
+            gunRotator.transform.rotation = Quaternion.LookRotation(
+                Vector3.forward,
+                mouseWordPosition - transform.position
+            );
+
+            var rad = gunRotator.rotation.eulerAngles.z * Mathf.Deg2Rad;
+
+            gunSpriteRenderer.flipY = Mathf.Sin(rad) > 0;
+            gunSpriteRenderer.sortingOrder = Mathf.Cos(rad) > 0 ? 0 : 1;
+        }
+
+        private void Shoot(Vector2 direction, Vector3 shootPosition)
+        {
+            var bullet = Instantiate(projectilePrefab, shootPosition, gunRotator.rotation);
+            bullet.LaunchProjectile(direction, projectileSpeed);
+
+            currentAmmo -= 1;
             remainingShootingDelay = shootingDelay;
         }
-        else
-        {
-            remainingShootingDelay -= Time.fixedDeltaTime;
-        }
-    }
 
-    public void OnShoot(InputAction.CallbackContext context)
-    {
-        remainingShootingDelay = 0;
-        isShooting = context.performed;
-    }
-    
-    public void OnLook(InputAction.CallbackContext context)
-    {
-        var mouseScreenPosition = context.ReadValue<Vector2>();
-        var mouseWordPosition = camera.ScreenToWorldPoint(mouseScreenPosition);
-        
-        transform.rotation = Quaternion.LookRotation(
-            Vector3.forward,
-            mouseWordPosition - transform.position
-        );
+        private void FillAmmo(int count)
+        {
+        }
     }
 }
