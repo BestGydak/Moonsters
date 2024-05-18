@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Astronaut
   - Monsters
+  - bullet
   layers:
   - Default
   - TransparentFX

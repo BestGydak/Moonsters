@@ -191,6 +191,7 @@ GameObject:
   - component: {fileID: 1322186548299294821}
   - component: {fileID: 9001395686437669065}
   - component: {fileID: 3548483406080941641}
+  - component: {fileID: 8528075219925318126}
   m_Layer: 8
   m_Name: Astronaut
   m_TagString: Untagged
@@ -399,6 +400,22 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: 625b8597-1f96-4a52-a7ab-eea9977906ea
     m_ActionName: Player/AstroLook[/Mouse/position]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 8528075219925318126}
+        m_TargetAssemblyTypeName: Moonsters.AstronautModel, Assembly-CSharp
+        m_MethodName: OnAction
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 915b77b2-75be-4e14-b830-98120f5351a0
+    m_ActionName: Player/AstroAction[/Keyboard/numpad0]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Player
@@ -443,7 +460,7 @@ CircleCollider2D:
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 2935
   m_ExcludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -460,7 +477,7 @@ CircleCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -487,6 +504,18 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &8528075219925318126
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4970985163186461923}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4d496a5842ae4934912f4cb3a93873d4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &5181425236479114375
 GameObject:
   m_ObjectHideFlags: 0
