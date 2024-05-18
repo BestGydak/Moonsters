@@ -10,6 +10,8 @@ namespace Moonsters
     {
         [SerializeField] private Rigidbody2D rigidBody;
         [SerializeField] private float normalSpeed;
+        [SerializeField] private Animator Animator;
+
         [Header("Sprint Settings")]
         [SerializeField] private float tiredSpeed;
         [SerializeField] private float sprintSpeed;
@@ -23,7 +25,7 @@ namespace Moonsters
         private AstronautCanSprintState canSprintState;
         private AstronautTiredState tiredState;
 
-        public Vector2 CurrentDirection
+        public Vector2 Direction
         {
             get
             {
@@ -39,11 +41,11 @@ namespace Moonsters
                 return Vector2.zero;
             }
         }
-        public float CurrentSpeed
+        public float Speed
         {
             get
             {
-                if (CurrentDirection == Vector2.zero)
+                if (Direction == Vector2.zero)
                     return 0;
                 if(stateMachine.CurrentState == canSprintState)
                 {
@@ -57,6 +59,9 @@ namespace Moonsters
                 return 0;
             }
         }
+
+        
+
         public float CurrentStamina
         {
             get => currentStamina;
@@ -69,6 +74,7 @@ namespace Moonsters
         }
 
         public UnityEvent<AstronautMovement, float, float> StaminaChanged;
+        
 
         private void Awake()
         {
@@ -84,6 +90,9 @@ namespace Moonsters
         private void Update()
         {
             stateMachine.OnLogic();
+            Animator.SetFloat("Horizontal", Direction.y);
+            Animator.SetFloat("Vertical", Direction.x);
+            Animator.SetFloat("Speed", Speed);
         }
 
         private void FixedUpdate()

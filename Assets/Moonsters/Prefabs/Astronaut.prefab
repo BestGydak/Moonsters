@@ -135,6 +135,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rigidBody: {fileID: 1322186548299294821}
   normalSpeed: 8
+  Animator: {fileID: 3548483406080941641}
   tiredSpeed: 5
   sprintSpeed: 15
   maxStamina: 100
