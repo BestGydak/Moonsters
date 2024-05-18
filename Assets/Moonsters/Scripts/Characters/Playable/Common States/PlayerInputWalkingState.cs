@@ -18,15 +18,7 @@ namespace Moonsters
 
         public override void OnPhysics()
         {
-            try
-            {
-                character.MovePosition(character.position + MoveDirection * Speed * Time.fixedDeltaTime);
-            }
-            catch (Exception e)
-            {
-                Console.WriteLine(e);
-                throw;
-            }
+            character.MovePosition(character.position + MoveDirection * Speed * Time.fixedDeltaTime);
         }
 
         public void OnMove(InputAction.CallbackContext context)
