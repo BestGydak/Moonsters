@@ -38,11 +38,7 @@ namespace Moonsters
 
         private void Awake()
         {
-            stateMachine = new();
-            canSprintState = new(normalSpeed, sprintSpeed, staminaGainPerSeconds, staminaConsumptionPerSeconds, this);
-            tiredState = new(tiredSpeed, staminaGainPerSeconds, this);
-            stateMachine.AddTransition(canSprintState, tiredState, () => CurrentStamina <= 0);
-            stateMachine.AddTransition(tiredState, canSprintState, () => CurrentStamina >= staminaToRest);
+            InitializeStateMachine();
         }
 
         private void Start()
@@ -59,6 +55,15 @@ namespace Moonsters
         private void FixedUpdate()
         {
             stateMachine.OnPhysics();
+        }
+
+        private void InitializeStateMachine()
+        {
+            stateMachine = new();
+            canSprintState = new(normalSpeed, sprintSpeed, staminaGainPerSeconds, staminaConsumptionPerSeconds, this);
+            tiredState = new(tiredSpeed, staminaGainPerSeconds, this);
+            stateMachine.AddTransition(canSprintState, tiredState, () => CurrentStamina <= 0);
+            stateMachine.AddTransition(tiredState, canSprintState, () => CurrentStamina >= staminaToRest);
         }
 
         public void OnMove(InputAction.CallbackContext context)
