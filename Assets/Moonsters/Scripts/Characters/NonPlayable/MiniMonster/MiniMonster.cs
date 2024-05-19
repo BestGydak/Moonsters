@@ -69,7 +69,7 @@ namespace Moonsters
             IEnumerator Coroutine()
             {
                 yield return new WaitForSeconds(spawnDelay);
-                stateMachine.SetState(attackingState);
+                stateMachine.SetState(approachingState);
             }
         }
 
