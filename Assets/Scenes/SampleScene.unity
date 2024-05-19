@@ -22167,7 +22167,7 @@ GameObject:
   m_Component:
   - component: {fileID: 640260433}
   - component: {fileID: 640260434}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: ShadowCaster2D
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -22626,6 +22626,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7803662559337292864, guid: 9d104b8d997bfc244826d435afd884fe, type: 3}
+      propertyPath: m_IncludeLayers.m_Bits
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8199044093506076086, guid: 9d104b8d997bfc244826d435afd884fe, type: 3}
       propertyPath: AstronautHealth
       value: 
@@ -23041,7 +23045,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1652541033}
   - component: {fileID: 1652541034}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: ShadowCaster2D
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -23434,7 +23438,7 @@ GameObject:
   - component: {fileID: 1977970122}
   - component: {fileID: 1977970121}
   - component: {fileID: 1977970123}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Borders
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -29200,6 +29204,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7169532058399336448, guid: d8920346cc33d7145bb51aebeaa8c026, type: 3}
       propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7580722220551461871, guid: d8920346cc33d7145bb51aebeaa8c026, type: 3}
+      propertyPath: m_IncludeLayers.m_Bits
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8832554027291977121, guid: d8920346cc33d7145bb51aebeaa8c026, type: 3}
