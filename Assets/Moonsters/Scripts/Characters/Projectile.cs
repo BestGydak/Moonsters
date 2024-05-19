@@ -12,12 +12,15 @@ namespace Moonsters
         [SerializeField] private float liveTime = 5;
         [SerializeField] private Vector2Int randomDamage = new(2, 5);
         [SerializeField] private TeamTags.Type target;
+        [SerializeField] private SpriteRenderer spriteRenderer;
 
         private new Rigidbody2D rigidbody;
         private bool isHit = false;
+        private bool needImmediateDestroy;
         private void Awake()
         {
             rigidbody = GetComponent<Rigidbody2D>();
+            needImmediateDestroy = GetComponent<TrailRenderer>() == null;
         }
 
         public void LaunchProjectile(Vector3 direction, float speed)
@@ -35,7 +38,7 @@ namespace Moonsters
 
             if (!other.TryGetComponent<IDamageable>(out var damageComponent))
             {
-                Destroy(gameObject);
+                HideObj();
                 isHit = true;
                 return;
             }
@@ -43,8 +46,20 @@ namespace Moonsters
                 return;
             var damage = Random.Range(randomDamage.x, randomDamage.y + 1);
             damageComponent.Damage(damage);
-            Destroy(gameObject);
+            HideObj();
             isHit = true;
+        }
+
+        private void HideObj()
+        {
+            if (needImmediateDestroy)
+                Destroy(gameObject);
+            else
+            {
+                rigidbody.isKinematic = true;
+                rigidbody.velocity = Vector2.zero;
+                spriteRenderer.gameObject.SetActive(false);
+            }
         }
     }
 }
