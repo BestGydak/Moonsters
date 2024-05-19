@@ -1,5 +1,6 @@
 using Pathfinding;
 using SBA;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -12,7 +13,7 @@ namespace Moonsters
         [SerializeField] private float distanceToAttack;
         [SerializeField] private float distanceToApproach;
         [SerializeField] private Animator Animator;
-
+        [SerializeField] private float spawnDelay;
         [Header("Attacking Settings")]
         [SerializeField] private Health healthTarget;
         [SerializeField] private int damage;
@@ -64,7 +65,12 @@ namespace Moonsters
         private void Start()
         {
             InitializeStateMachine();
-            stateMachine.SetState(attackingState);
+            StartCoroutine(Coroutine());
+            IEnumerator Coroutine()
+            {
+                yield return new WaitForSeconds(spawnDelay);
+                stateMachine.SetState(attackingState);
+            }
         }
 
         private void Update()

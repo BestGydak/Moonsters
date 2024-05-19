@@ -24,6 +24,7 @@ public class AstronautShooting : MonoBehaviour
     [SerializeField] private float projectileSpeed;
     [SerializeField] private float shootingDelay;
     [SerializeField] private int maxAmmo;
+    [SerializeField] private GameObject menu;
 
     private bool isShooting;
     private float remainingShootingDelay;
@@ -60,7 +61,8 @@ public class AstronautShooting : MonoBehaviour
     public void OnShoot(InputAction.CallbackContext context)
     {
         isShooting = context.performed;
-        if (isShooting && remainingShootingDelay <= 0 && currentAmmo > 0)
+        if (isShooting && remainingShootingDelay <= 0 && currentAmmo > 0
+            && !menu.activeSelf)
         {
             var gunTransform = gunRotator.transform;
             var rads = (gunTransform.rotation.eulerAngles.z + 90) * Mathf.Deg2Rad;

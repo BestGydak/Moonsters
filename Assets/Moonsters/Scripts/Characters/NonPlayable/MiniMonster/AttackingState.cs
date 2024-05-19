@@ -36,7 +36,11 @@ namespace Moonsters
         {
             attacked?.Invoke();
             target.Damage(damage);
-            yield return new WaitForSeconds(attackCooldown);
+            while(true)
+            {
+                yield return new WaitForSeconds(attackCooldown);
+                target.Damage(damage);
+            }
         }
     }
 }
