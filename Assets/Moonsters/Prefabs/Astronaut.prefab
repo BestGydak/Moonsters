@@ -287,6 +287,7 @@ MonoBehaviour:
   health: {fileID: 4617479379317121642}
   shootSound: {fileID: 8300000, guid: 1bae324cc5654c342b014792d23afe3b, type: 3}
   audioSource: {fileID: 4320596115774182682}
+  light2d: {fileID: 4268542198863207895}
   gunRotator: {fileID: 6975631522191932862}
   gunAnimator: {fileID: 1755242959211326961}
   gun: {fileID: 8965867740736805637}
@@ -982,8 +983,8 @@ MonoBehaviour:
   m_LocalBounds:
     m_Center: {x: 0, y: -0.00000011920929, z: 0}
     m_Extent: {x: 0.9985302, y: 0.99853027, z: 0}
-  m_PointLightInnerAngle: 22.022465
-  m_PointLightOuterAngle: 43.595497
+  m_PointLightInnerAngle: 48.879025
+  m_PointLightOuterAngle: 70.45206
   m_PointLightInnerRadius: 1.2905592
   m_PointLightOuterRadius: 24
   m_ShapeLightParametricSides: 5
