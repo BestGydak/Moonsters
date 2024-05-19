@@ -466,6 +466,7 @@ MonoBehaviour:
   actionField: {fileID: 8797823056812873100}
   helpGameObject: {fileID: 6210240600721168466}
   arrowToDestroy: {fileID: 0}
+  bigWhiteLight: {fileID: 2762796868906962742}
   secondsToLoad: 10
   slider: {fileID: 8240141784554248189}
 --- !u!114 &3002375903916365337
@@ -658,7 +659,7 @@ MonoBehaviour:
   - {x: -0.28225708, y: -0.3758545, z: 0}
   m_ShapePathHash: -439464947
   m_Mesh: {fileID: 0}
-  m_InstanceId: 179750
+  m_InstanceId: 174644
   m_LocalBounds:
     m_Center: {x: 0.005973816, y: -0.16571808, z: 0}
     m_Extent: {x: 1.1794357, y: 1.334816, z: 0}

@@ -25,7 +25,6 @@ namespace Saw4uk.Scripts
                 if (activatedGeneratorsAmount == 3)
                 {
                     gameWon.Invoke();
-                    Debug.Log("won");
                 }
             }
         }
