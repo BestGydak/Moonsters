@@ -364,7 +364,7 @@ MonoBehaviour:
   healthCost: 0
   health: {fileID: 3805289354057968516}
   <LastTimeUsed>k__BackingField: 0
-  damage: 5
+  damage: 10
   attackRadius: 2
   hitBoxMask:
     serializedVersion: 2
