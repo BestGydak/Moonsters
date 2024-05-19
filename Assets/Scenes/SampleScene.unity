@@ -49668,10 +49668,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Astronaut
       objectReference: {fileID: 0}
-    - target: {fileID: 5711420434047227856, guid: d8920346cc33d7145bb51aebeaa8c026, type: 3}
-      propertyPath: staminaToRest
-      value: 12
-      objectReference: {fileID: 0}
     - target: {fileID: 6963354955798860819, guid: d8920346cc33d7145bb51aebeaa8c026, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0

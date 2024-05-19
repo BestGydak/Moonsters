@@ -481,7 +481,6 @@ GameObject:
   - component: {fileID: 1435331302582717404}
   - component: {fileID: 3805289354057968516}
   - component: {fileID: 20595006957081675}
-  - component: {fileID: 3975559359310855931}
   m_Layer: 11
   m_Name: Hitbox
   m_TagString: Monsters
@@ -566,24 +565,20 @@ MonoBehaviour:
       m_Calls: []
   Died:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 7266684025466955933}
+        m_TargetAssemblyTypeName: Moonsters.MonsterMovement, Assembly-CSharp
+        m_MethodName: OnDie
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &20595006957081675
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1659844583789081421}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ad3d5414070fc74418d167e62da3a12a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  randomHealAmount: {x: 10, y: 10}
-  healIntervalInSeconds: 1
-  health: {fileID: 3805289354057968516}
-  healDelayAfterHit: 3
---- !u!114 &3975559359310855931
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
