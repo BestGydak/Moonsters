@@ -20,6 +20,8 @@ public class Generator : MonoBehaviour
     private bool canActivate;
     private bool isActivated;
     private float value;
+
+    public event Action Activated;
     
     private AstronautModel astronautModel;
     private void Awake()
@@ -98,5 +100,6 @@ public class Generator : MonoBehaviour
         isActivated = true;
         canActivate = false;
         isActive = false;
+        Activated?.Invoke();
     }
 }
