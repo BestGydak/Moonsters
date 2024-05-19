@@ -31,8 +31,11 @@ namespace Moonsters
 
         private IEnumerator AttackCoroutine()
         {
-            yield return new WaitForSeconds(attackCooldown);
-            target.Damage(damage);
+            while(true)
+            {
+                yield return new WaitForSeconds(attackCooldown);
+                target.Damage(damage);
+            }
         }
     }
 }

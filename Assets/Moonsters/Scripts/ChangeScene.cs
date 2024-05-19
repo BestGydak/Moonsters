@@ -7,7 +7,7 @@ namespace Moonsters
 {
     public class ChangeScene : MonoBehaviour
     {
-        [SerializeField] private Scene scene;
+        [SerializeField] private SceneID scene;
 
         public void Change()
         {
@@ -15,9 +15,11 @@ namespace Moonsters
         }
     }
 
-    public enum Scene
+    public enum SceneID
     {
         MainMenu = 0,
-        Game = 1
+        Game = 1,
+        AstronautWin = 2,
+        MonsterWin = 3
     }
 }
