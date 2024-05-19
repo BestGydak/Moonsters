@@ -10,6 +10,8 @@ public class AstronautShooting : MonoBehaviour
 {
     [SerializeField] private Camera camera;
     [SerializeField] private Health health;
+    [SerializeField] private AudioClip shootSound;
+    [SerializeField] private AudioSource audioSource;
 
     [Header("Gun Settings")] 
     [SerializeField] private Transform gunRotator;
@@ -92,6 +94,7 @@ public class AstronautShooting : MonoBehaviour
         remainingShootingDelay = shootingDelay;
         
         gunAnimator.SetTrigger("Fire");
+        audioSource.PlayOneShot(shootSound);
     }
 
     public void AddAmmo(int count)

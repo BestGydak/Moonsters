@@ -148,6 +148,11 @@ MonoBehaviour:
   sba: {fileID: 3091159586320373934}
   distanceToReachNode: 0.5
   findPathDelayInSeconds: 0.1
+  sfxs:
+  - {fileID: 8087097153953592454, guid: b3b043fde36774e41928edb65f611054, type: 3}
+  - {fileID: 8872546945689255334, guid: 84fa4a962b281e34286d68caa8ac0c10, type: 3}
+  - {fileID: 4404659348434517714, guid: c55455a3a99055e43a995b309f198b37, type: 3}
+  - {fileID: 2272657637397233661, guid: c56edaf6a4917fe498194f68df02f642, type: 3}
 --- !u!50 &7103669298393765027
 Rigidbody2D:
   serializedVersion: 4

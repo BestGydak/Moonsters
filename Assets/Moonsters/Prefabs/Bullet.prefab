@@ -205,7 +205,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   liveTime: 5
-  randomDamage: {x: 5, y: 10}
+  randomDamage: {x: 10, y: 30}
   target: 1
   spriteRenderer: {fileID: 1626570173204117977}
 --- !u!96 &5341096510200451396

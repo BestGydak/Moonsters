@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: 5449950051804933093}
   - component: {fileID: 5578047806705505613}
   - component: {fileID: 8199044093506076086}
+  - component: {fileID: 3233877724513130238}
   m_Layer: 8
   m_Name: Monster
   m_TagString: Untagged
@@ -345,6 +346,11 @@ MonoBehaviour:
   <LastTimeUsed>k__BackingField: 0
   miniMonsterPrefab: {fileID: 2333101531224714499, guid: 9e80602d2a14563499f6123cea992565, type: 3}
   AstronautHealth: {fileID: 0}
+  audioClips:
+  - {fileID: 8300000, guid: 290dd89b79a1be5489cab123f7ae8eff, type: 3}
+  - {fileID: 8300000, guid: 8688a4665f4ccd14994fbdee6ea9506a, type: 3}
+  - {fileID: 8300000, guid: f7d94523845407b46b91408ef8e73084, type: 3}
+  audioSource: {fileID: 3233877724513130238}
 --- !u!114 &8199044093506076086
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -363,6 +369,106 @@ MonoBehaviour:
   <LastTimeUsed>k__BackingField: 0
   turretPrefab: {fileID: 2185020102368106675, guid: 60650ad59fa79654dace69a88e56309e, type: 3}
   AstronautHealth: {fileID: 0}
+  audioClips:
+  - {fileID: 8300000, guid: 217db9dbe83decf4e986a2c28d4d0d23, type: 3}
+  - {fileID: 8300000, guid: 001d8f2f6f69639419ab3b2f04ca4d85, type: 3}
+  audioSource: {fileID: 3233877724513130238}
+--- !u!82 &3233877724513130238
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 306970997499452644}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &1659844583789081421
 GameObject:
   m_ObjectHideFlags: 0
@@ -375,7 +481,6 @@ GameObject:
   - component: {fileID: 1435331302582717404}
   - component: {fileID: 3805289354057968516}
   - component: {fileID: 20595006957081675}
-  - component: {fileID: 3975559359310855931}
   m_Layer: 11
   m_Name: Hitbox
   m_TagString: Monsters
@@ -460,24 +565,20 @@ MonoBehaviour:
       m_Calls: []
   Died:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 7266684025466955933}
+        m_TargetAssemblyTypeName: Moonsters.MonsterMovement, Assembly-CSharp
+        m_MethodName: OnDie
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &20595006957081675
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1659844583789081421}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ad3d5414070fc74418d167e62da3a12a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  randomHealAmount: {x: 10, y: 10}
-  healIntervalInSeconds: 1
-  health: {fileID: 3805289354057968516}
-  healDelayAfterHit: 3
---- !u!114 &3975559359310855931
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
