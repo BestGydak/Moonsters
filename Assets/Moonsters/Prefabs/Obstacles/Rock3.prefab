@@ -1,5 +1,86 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &1558876894110539601
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2447702302215281510}
+  - component: {fileID: 8874003045912243618}
+  m_Layer: 6
+  m_Name: ShadowCaster
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2447702302215281510
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1558876894110539601}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 458153234823397675}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &8874003045912243618
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1558876894110539601}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7db70e0ea77f5ac47a8f4565a9406397, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_ShadowGroup: 0
+  m_ComponentVersion: 1
+  m_HasRenderer: 0
+  m_UseRendererSilhouette: 1
+  m_CastsShadows: 1
+  m_SelfShadows: 0
+  m_ApplyToSortingLayers: 0000000067b26ecb07f11994
+  m_ShapePath:
+  - {x: -0.15766557, y: -0.02633849, z: -0.0000014305115}
+  - {x: -0.20447038, y: -0.0019366335, z: 0}
+  - {x: -0.2631038, y: -0.0007418703, z: -0.0000014305115}
+  - {x: -0.27982134, y: 0.019749157, z: -0.0000014305115}
+  - {x: -0.27371782, y: 0.059328932, z: -0.0000014305115}
+  - {x: -0.21246904, y: 0.10544252, z: -0.0000014305115}
+  - {x: -0.16480973, y: 0.15707368, z: -0.0000014305115}
+  - {x: -0.12258256, y: 0.19839449, z: 0}
+  - {x: -0.012627725, y: 0.19442262, z: 0}
+  - {x: 0.04767196, y: 0.17216615, z: -0.0000014305115}
+  - {x: 0.08977096, y: 0.12450685, z: -0.0000014305115}
+  - {x: 0.1572911, y: 0.09114503, z: -0.0000014305115}
+  - {x: 0.23831221, y: 0.0641385, z: -0.0000014305115}
+  - {x: 0.26214033, y: 0.031571668, z: -0.0000014305115}
+  - {x: 0.25697678, y: -0.01450072, z: -0.0000014305115}
+  - {x: 0.25445908, y: -0.04685851, z: -0.0000014305115}
+  - {x: 0.23096053, y: -0.08766814, z: 0}
+  - {x: 0.17294662, y: -0.104126275, z: -0.0000014305115}
+  - {x: 0.10107467, y: -0.16346465, z: -0.0000014305115}
+  - {x: 0.013510582, y: -0.16039458, z: -0.0000014305115}
+  - {x: -0.062057044, y: -0.13167144, z: 0}
+  - {x: -0.12759049, y: -0.09587127, z: -0.0000014305115}
+  - {x: -0.13925432, y: -0.06510802, z: -0.0000014305115}
+  m_ShapePathHash: -1784482323
+  m_Mesh: {fileID: 0}
+  m_InstanceId: -508778
+  m_LocalBounds:
+    m_Center: {x: -0.008840501, y: 0.01746492, z: 0}
+    m_Extent: {x: 0.27098083, y: 0.18092957, z: 0}
 --- !u!1 &1947077644713265648
 GameObject:
   m_ObjectHideFlags: 0
@@ -13,7 +94,7 @@ GameObject:
   - component: {fileID: 5624423022490330883}
   - component: {fileID: 7225179080810302457}
   m_Layer: 6
-  m_Name: Obstacle (1) 1
+  m_Name: Rock3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -31,7 +112,8 @@ Transform:
   m_LocalPosition: {x: 146.28, y: -100.65, z: 4.8245635}
   m_LocalScale: {x: 5, y: 5, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 2447702302215281510}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &4515724137870847873
