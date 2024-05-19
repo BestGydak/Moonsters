@@ -18,6 +18,8 @@ namespace Moonsters
         {
             volumeSlider.onValueChanged.AddListener(OnVolumeChanged);
             audioGroup.SetFloat(volumeGroup.ToString(), FloatToMixer(startValue));
+            audioGroup.GetFloat(volumeGroup.ToString(), out var volume);
+            volumeSlider.value = MixerToFloat(volume);
         }
 
         public void OnVolumeChanged(float value)
@@ -32,6 +34,8 @@ namespace Moonsters
 
         public static float FloatToMixer(float value)
         {
+            if(value == 0)
+               return -80;
             return Mathf.Log10(value) * 20;
         }
     }

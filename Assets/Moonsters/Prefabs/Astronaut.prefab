@@ -293,6 +293,7 @@ MonoBehaviour:
   projectileSpeed: 40
   shootingDelay: 1.5
   maxAmmo: 20
+  menu: {fileID: 0}
   ammoChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -461,6 +462,10 @@ MonoBehaviour:
       m_Calls: []
     m_ActionId: c46dea4d-1d6f-4676-a510-15af250431cf
     m_ActionName: Monster/Attack[/Keyboard/space]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 8b327973-f72f-4e02-b6fc-d0c79c1e1663
+    m_ActionName: UI/ToMenu[/Keyboard/escape]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Player
@@ -580,7 +585,7 @@ AudioSource:
   m_GameObject: {fileID: 4970985163186461923}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: 5724019532439582531, guid: 1dd8737ada222a54eac848d0814a8e5c, type: 2}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
   m_Volume: 1
