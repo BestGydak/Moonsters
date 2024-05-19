@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using Moonsters;
+using Saw4uk.Scripts;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -10,6 +11,7 @@ public class Generator : MonoBehaviour
     [SerializeField] private GeneratorField generatorField;
     [SerializeField] private GeneratorField actionField;
     [SerializeField] private GameObject helpGameObject;
+    [SerializeField] private Arrow arrowToDestroy;
 
     [Header("Settings")] 
     [SerializeField] private float secondsToLoad;
@@ -100,6 +102,8 @@ public class Generator : MonoBehaviour
         isActivated = true;
         canActivate = false;
         isActive = false;
+        if(arrowToDestroy != null)
+            Destroy(arrowToDestroy.gameObject);
         Activated?.Invoke();
     }
 }
