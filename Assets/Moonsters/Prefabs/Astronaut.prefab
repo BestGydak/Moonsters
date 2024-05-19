@@ -299,6 +299,9 @@ MonoBehaviour:
   ammoChanged:
     m_PersistentCalls:
       m_Calls: []
+  maxAmmoChanged:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!114 &4950937774683956327
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1033,9 +1036,17 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 897293670762228239}
     m_Modifications:
+    - target: {fileID: 3723027193987110544, guid: b927b0e6068782748998eb53002e1c63, type: 3}
+      propertyPath: minDistance
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 3723027193987110544, guid: b927b0e6068782748998eb53002e1c63, type: 3}
+      propertyPath: circleCenter
+      value: 
+      objectReference: {fileID: 4970985163186461923}
     - target: {fileID: 5035050524646344824, guid: b927b0e6068782748998eb53002e1c63, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 2.45
+      value: 3.3900025
       objectReference: {fileID: 0}
     - target: {fileID: 5035050524646344824, guid: b927b0e6068782748998eb53002e1c63, type: 3}
       propertyPath: m_LocalPosition.y
@@ -1235,9 +1246,17 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 897293670762228239}
     m_Modifications:
+    - target: {fileID: 3723027193987110544, guid: b927b0e6068782748998eb53002e1c63, type: 3}
+      propertyPath: minDistance
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 3723027193987110544, guid: b927b0e6068782748998eb53002e1c63, type: 3}
+      propertyPath: circleCenter
+      value: 
+      objectReference: {fileID: 4970985163186461923}
     - target: {fileID: 5035050524646344824, guid: b927b0e6068782748998eb53002e1c63, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 2.45
+      value: 3.39
       objectReference: {fileID: 0}
     - target: {fileID: 5035050524646344824, guid: b927b0e6068782748998eb53002e1c63, type: 3}
       propertyPath: m_LocalPosition.y
@@ -1297,9 +1316,17 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 897293670762228239}
     m_Modifications:
+    - target: {fileID: 3723027193987110544, guid: b927b0e6068782748998eb53002e1c63, type: 3}
+      propertyPath: minDistance
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 3723027193987110544, guid: b927b0e6068782748998eb53002e1c63, type: 3}
+      propertyPath: circleCenter
+      value: 
+      objectReference: {fileID: 4970985163186461923}
     - target: {fileID: 5035050524646344824, guid: b927b0e6068782748998eb53002e1c63, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 2.45
+      value: 3.3900025
       objectReference: {fileID: 0}
     - target: {fileID: 5035050524646344824, guid: b927b0e6068782748998eb53002e1c63, type: 3}
       propertyPath: m_LocalPosition.y
