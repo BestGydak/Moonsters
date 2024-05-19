@@ -48,11 +48,6 @@ public class AstronautShooting : MonoBehaviour
     {
         remainingShootingDelay = 0;
         CurrentAmmo = maxAmmo;
-        
-        health.CurrentHealthChanged.AddListener((health, previousCurrentHealth, currentHealth) =>
-        {
-            Debug.Log($"Prev. heal: {previousCurrentHealth}; Curr. heal: {currentHealth}");
-        });
     }
 
     private void FixedUpdate()
@@ -97,13 +92,11 @@ public class AstronautShooting : MonoBehaviour
         remainingShootingDelay = shootingDelay;
         
         gunAnimator.SetTrigger("Fire");
-        Debug.Log($"Current ammo amount: {CurrentAmmo}");
     }
 
     public void AddAmmo(int count)
     {
         CurrentAmmo += Mathf.Clamp(count, 0, maxAmmo);
-        Debug.Log($"Added ammo: {count}");
     }
 
     public void AddHealth(int healAmount)
