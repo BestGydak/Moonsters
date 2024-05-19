@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using Moonsters;
 using Saw4uk.Scripts;
 using UnityEngine;
+using UnityEngine.Rendering.Universal;
 using UnityEngine.UI;
 
 public class Generator : MonoBehaviour
@@ -12,6 +13,7 @@ public class Generator : MonoBehaviour
     [SerializeField] private GeneratorField actionField;
     [SerializeField] private GameObject helpGameObject;
     [SerializeField] private Arrow arrowToDestroy;
+    [SerializeField] private Light2D bigWhiteLight;
 
     [Header("Settings")] 
     [SerializeField] private float secondsToLoad;
@@ -71,10 +73,10 @@ public class Generator : MonoBehaviour
     {
         if (canActivate)
         {
+            bigWhiteLight.gameObject.SetActive(true);
             StopAllCoroutines();
             StartCoroutine(LoadingCoroutine());
         }
-            
     }
 
     private void OnCharacterExit()

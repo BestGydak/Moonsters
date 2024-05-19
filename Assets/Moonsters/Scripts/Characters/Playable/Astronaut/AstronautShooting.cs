@@ -5,6 +5,7 @@ using Moonsters;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.InputSystem;
+using UnityEngine.Rendering.Universal;
 
 public class AstronautShooting : MonoBehaviour
 {
@@ -13,7 +14,8 @@ public class AstronautShooting : MonoBehaviour
     [SerializeField] private AudioClip shootSound;
     [SerializeField] private AudioSource audioSource;
 
-    [Header("Gun Settings")] 
+    [Header("Gun Settings")]
+    [SerializeField] private Light2D light2d;
     [SerializeField] private Transform gunRotator;
     [SerializeField] private Animator gunAnimator;
     [SerializeField] private Transform gun;
@@ -32,7 +34,7 @@ public class AstronautShooting : MonoBehaviour
 
     public UnityEvent<int> ammoChanged;
     public UnityEvent<int> maxAmmoChanged;
-    
+    public Light2D Light2D => light2d;
     public int CurrentAmmo
     {
         set

@@ -19,7 +19,8 @@ namespace Saw4uk.Scripts
 
         private void OnAmmoChanged(int arg0)
         {
-            ammoAmount.text = $"{arg0.ToString()}/{maxAmmo}";
+            ammoAmount.text = $"{astronautShooting.CurrentAmmo}/{astronautShooting.MaxAmmo}";
         }
+
     }
 }
