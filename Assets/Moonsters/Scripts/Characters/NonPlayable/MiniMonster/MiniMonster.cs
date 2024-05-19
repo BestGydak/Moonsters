@@ -1,5 +1,6 @@
 using Pathfinding;
 using SBA;
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace Moonsters
@@ -11,15 +12,20 @@ namespace Moonsters
         [SerializeField] private float distanceToAttack;
         [SerializeField] private float distanceToApproach;
         [SerializeField] private Animator Animator;
+
         [Header("Attacking Settings")]
         [SerializeField] private Health healthTarget;
         [SerializeField] private int damage;
         [SerializeField] private float attackCooldown;
+
         [Header("Pathfinding Settings")]
         [SerializeField] private Seeker seeker;
         [SerializeField] private SteeringBehaviourAgent sba;
         [SerializeField] private float distanceToReachNode;
         [SerializeField] private float findPathDelayInSeconds;
+
+        [Header("SFX Settings")]
+        [SerializeField] private List<SFX> sfxs;
         
         private StateMachine stateMachine;
         private PathfindingApproachingState approachingState;
@@ -90,6 +96,8 @@ namespace Moonsters
 
         public void Die()
         {
+            var sfx = sfxs.GetRandom();
+            Instantiate(sfx);
             Destroy(gameObject);
         }
 
