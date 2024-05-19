@@ -35,6 +35,7 @@ public class AstronautShooting : MonoBehaviour
     public UnityEvent<int> ammoChanged;
     public UnityEvent<int> maxAmmoChanged;
     public Light2D Light2D => light2d;
+    public Health Health => health;
     public int CurrentAmmo
     {
         set
@@ -86,6 +87,8 @@ public class AstronautShooting : MonoBehaviour
     public void OnLook(InputAction.CallbackContext context)
     {
         var mouseScreenPosition = context.ReadValue<Vector2>();
+        if (camera == null)
+            return;
         var mouseWordPosition = camera.ScreenToWorldPoint(mouseScreenPosition);
 
         gunRotator.transform.rotation = Quaternion.LookRotation(

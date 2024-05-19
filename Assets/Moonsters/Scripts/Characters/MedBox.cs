@@ -10,6 +10,8 @@ namespace Moonsters
         {
             if (other.TryGetComponent<AstronautShooting>(out var astronautShooting))
             {
+                if (astronautShooting.Health.MaxHealth - astronautShooting.Health.CurrentHealth < healAmount)
+                    return;
                 astronautShooting.AddHealth(healAmount);
                 Destroy(gameObject);
             }

@@ -21,7 +21,7 @@ namespace Moonsters
         {
             InitializeStateMachine();
             stateMachine.SetState(healingState);
-            health.Damaged.AddListener(OnHPChanged);
+            health.CurrentHealthChanged.AddListener(OnHPChanged);
         }
 
         private void FixedUpdate()
