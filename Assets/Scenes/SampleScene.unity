@@ -23023,31 +23023,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f66c67ae1194a504c8f04da13f7d1d89, type: 3}
---- !u!1 &1543540129 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 3176519785840568525, guid: d8920346cc33d7145bb51aebeaa8c026, type: 3}
-  m_PrefabInstance: {fileID: 7523536387400313429}
-  m_PrefabAsset: {fileID: 0}
---- !u!212 &1543540131 stripped
-SpriteRenderer:
-  m_CorrespondingSourceObject: {fileID: 5363238152746616239, guid: d8920346cc33d7145bb51aebeaa8c026, type: 3}
-  m_PrefabInstance: {fileID: 7523536387400313429}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1543540132
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1543540129}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5dda571e3cc3d0d4390cce3f055b401f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  spriteRenderer: {fileID: 1543540131}
-  offset: 0
-  isStatic: 0
 --- !u!1 &1652541032
 GameObject:
   m_ObjectHideFlags: 0
@@ -29076,10 +29051,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 1641756158779846319, guid: d8920346cc33d7145bb51aebeaa8c026, type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 4970985163186461923, guid: d8920346cc33d7145bb51aebeaa8c026, type: 3}
       propertyPath: m_Name
       value: Astronaut
@@ -29092,37 +29063,14 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 8558841896957512906, guid: d8920346cc33d7145bb51aebeaa8c026, type: 3}
-      propertyPath: m_ConstrainProportionsScale
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 8832554027291977121, guid: d8920346cc33d7145bb51aebeaa8c026, type: 3}
       propertyPath: camera
       value: 
       objectReference: {fileID: 2109103451}
-    - target: {fileID: 9001395686437669065, guid: d8920346cc33d7145bb51aebeaa8c026, type: 3}
-      propertyPath: m_Radius
-      value: 0.6567993
-      objectReference: {fileID: 0}
-    - target: {fileID: 9001395686437669065, guid: d8920346cc33d7145bb51aebeaa8c026, type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 9001395686437669065, guid: d8920346cc33d7145bb51aebeaa8c026, type: 3}
-      propertyPath: m_Offset.y
-      value: -0.15679932
-      objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 9001395686437669065, guid: d8920346cc33d7145bb51aebeaa8c026, type: 3}
+    m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 4970985163186461923, guid: d8920346cc33d7145bb51aebeaa8c026, type: 3}
-      insertIndex: 6
-      addedObject: {fileID: 7523536387400313446}
-    - targetCorrespondingSourceObject: {fileID: 3176519785840568525, guid: d8920346cc33d7145bb51aebeaa8c026, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1543540132}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d8920346cc33d7145bb51aebeaa8c026, type: 3}
 --- !u!1 &7523536387400313430 stripped
 GameObject:
@@ -29140,51 +29088,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8369906411f068648aec25a7900ae258, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!61 &7523536387400313446
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7523536387400313430}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 2935
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_ForceSendLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ForceReceiveLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ContactCaptureLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_CallbackLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: -0.020233154, y: -0.18714523}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0, y: 0}
-    oldSize: {x: 0, y: 0}
-    newSize: {x: 0, y: 0}
-    adaptiveTilingThreshold: 0
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 0.6156006, y: 1.2529068}
-  m_EdgeRadius: 0
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
