@@ -383,7 +383,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cooldown: 1
-  healthCost: 33
+  healthCost: 16
   health: {fileID: 3805289354057968516}
   <LastTimeUsed>k__BackingField: 0
   miniMonsterPrefab: {fileID: 2333101531224714499, guid: 9e80602d2a14563499f6123cea992565, type: 3}
@@ -406,7 +406,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cooldown: 1
-  healthCost: 33
+  healthCost: 16
   health: {fileID: 3805289354057968516}
   <LastTimeUsed>k__BackingField: 0
   turretPrefab: {fileID: 2185020102368106675, guid: 60650ad59fa79654dace69a88e56309e, type: 3}
@@ -594,8 +594,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   slider: {fileID: 8844377474988194116}
   gracePeriodInSeconds: 0
-  maxHealth: 100
-  currentHealth: 100
+  maxHealth: 50
+  currentHealth: 50
   CurrentHealthChanged:
     m_PersistentCalls:
       m_Calls: []
