@@ -26,8 +26,8 @@ Transform:
   m_GameObject: {fileID: 919296526640266329}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 10}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: -0.09, y: -0.13, z: 10}
+  m_LocalScale: {x: 4.5771, y: 4.5771, z: 4.5771}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 3579553768376492729}
@@ -73,8 +73,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 99
-  m_Sprite: {fileID: 2747690628134850419, guid: b670ab75dde984907b8570040daa08c5, type: 3}
-  m_Color: {r: 0.24528301, g: 0, b: 0, a: 1}
+  m_Sprite: {fileID: 603255145, guid: 35faa07cb285cd3419ee72409b6e31aa, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -94,6 +94,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3579553768376492729}
   - component: {fileID: 2185020102368106675}
+  - component: {fileID: 4365140363250709943}
   m_Layer: 0
   m_Name: Turret
   m_TagString: Untagged
@@ -135,8 +136,30 @@ MonoBehaviour:
   maxAttackDelay: 2.5
   healthTarget: {fileID: 5330812849472842143}
   maxDistanceToAttack: 30
+  animator: {fileID: 4365140363250709943}
   projectilePrefab: {fileID: 7960145637305296800, guid: 064edeca743eee540b4466f3e0c22343, type: 3}
   projectileSpeed: 17
+--- !u!95 &4365140363250709943
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2916807738997630643}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 65a6fe35eaf0fb744b2a99963c503592, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &7427090409575549929
 GameObject:
   m_ObjectHideFlags: 0
@@ -147,7 +170,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2810211690636253113}
   - component: {fileID: 5330812849472842143}
-  - component: {fileID: 3011093847640829113}
+  - component: {fileID: 5188034562713802829}
   m_Layer: 11
   m_Name: Hitbox
   m_TagString: Monsters
@@ -210,8 +233,8 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
---- !u!58 &3011093847640829113
-CircleCollider2D:
+--- !u!61 &5188034562713802829
+BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -242,9 +265,19 @@ CircleCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: -0.07267761, y: -0.5087466}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
   serializedVersion: 2
-  m_Radius: 0.5
+  m_Size: {x: 1.0726776, y: 2.0174932}
+  m_EdgeRadius: 0
 --- !u!1001 &2111358072628587140
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -253,9 +286,17 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 3579553768376492729}
     m_Modifications:
+    - target: {fileID: 2273015042287658733, guid: 77c6c772bb711f24dbee881bece3161d, type: 3}
+      propertyPath: m_SortingOrder
+      value: 150
+      objectReference: {fileID: 0}
     - target: {fileID: 2943745678574093205, guid: 77c6c772bb711f24dbee881bece3161d, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5129256159237574685, guid: 77c6c772bb711f24dbee881bece3161d, type: 3}
+      propertyPath: m_PresetInfoIsWorld
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6057923208604442039, guid: 77c6c772bb711f24dbee881bece3161d, type: 3}
       propertyPath: m_Name

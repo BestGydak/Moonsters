@@ -10,9 +10,13 @@ namespace Moonsters
         [SerializeField] private float maxAttackDelay;
         [SerializeField] private Health healthTarget;
         [SerializeField] private float maxDistanceToAttack;
-        [Header("Projectile Settings")]
+
+        [Header("Projectile Settings")] [SerializeField]
+        private Animator animator;
         [SerializeField] private Projectile projectilePrefab;
         [SerializeField] private float projectileSpeed;
+
+        private bool animationEnded = false;
         
         public Health HealthTarget
         {
@@ -34,12 +38,18 @@ namespace Moonsters
                     yield return new WaitForFixedUpdate();
                     continue;
                 }
-                var direction = ((Vector2)healthTarget.transform.position - 
-                    (Vector2)transform.position).normalized;
-                var projectile = Instantiate(projectilePrefab, transform.position, Quaternion.identity);
-                projectile.LaunchProjectile(direction, projectileSpeed);
+                animationEnded = false;
+                animator.SetTrigger("Fire");
                 yield return new WaitForSeconds(Random.Range(minAttackDelay, maxAttackDelay));
             }
+        }
+
+        private void LaunchBullet()
+        {
+            var direction = ((Vector2)healthTarget.transform.position - 
+                             (Vector2)transform.position).normalized;
+            var projectile = Instantiate(projectilePrefab, transform.position, Quaternion.identity);
+            projectile.LaunchProjectile(direction, projectileSpeed);
         }
 
         public void Die()

@@ -140,6 +140,7 @@ MonoBehaviour:
   speed: 10
   distanceToAttack: 1
   distanceToApproach: 1.5
+  Animator: {fileID: 8385827403719247134}
   healthTarget: {fileID: 6808987479059313842}
   damage: 10
   attackCooldown: 0.7
@@ -173,7 +174,7 @@ Rigidbody2D:
   m_Interpolate: 1
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!114 &3091159586320373934
 MonoBehaviour:
   m_ObjectHideFlags: 0
