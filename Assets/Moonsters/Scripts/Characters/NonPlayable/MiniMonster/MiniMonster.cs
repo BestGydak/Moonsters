@@ -24,6 +24,8 @@ namespace Moonsters
         [SerializeField] private float distanceToReachNode;
         [SerializeField] private float findPathDelayInSeconds;
 
+        [SerializeField] private SpriteRenderer spriteRenderer;
+        
         [Header("SFX Settings")]
         [SerializeField] private List<SFX> sfxs;
         
@@ -90,8 +92,14 @@ namespace Moonsters
                 distanceToReachNode, 
                 findPathDelayInSeconds);
             attackingState = new(attackCooldown, damage, this, healthTarget);
+            attackingState.attacked += OnAttacked;
             stateMachine.AddTransition(approachingState, attackingState, () => DistanceToTarget() <= distanceToAttack);
             stateMachine.AddTransition(attackingState, approachingState, () => DistanceToTarget() >= distanceToApproach);
+        }
+
+        private void OnAttacked()
+        {
+            Animator.SetTrigger(healthTarget.transform.position.x < transform.position.x ? "AttackLeft" : "AttackRight");
         }
 
         public void Die()

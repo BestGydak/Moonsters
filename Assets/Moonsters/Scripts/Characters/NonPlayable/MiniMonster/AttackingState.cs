@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using UnityEngine;
 
 namespace Moonsters
@@ -11,6 +12,8 @@ namespace Moonsters
         private IDamageable target;
 
         private Coroutine attackCoroutine;
+
+        public event Action attacked;
 
         public AttackingState(
             float attackCooldown, 
@@ -31,8 +34,9 @@ namespace Moonsters
 
         private IEnumerator AttackCoroutine()
         {
-            yield return new WaitForSeconds(attackCooldown);
+            attacked?.Invoke();
             target.Damage(damage);
+            yield return new WaitForSeconds(attackCooldown);
         }
     }
 }
