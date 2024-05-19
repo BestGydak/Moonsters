@@ -169,7 +169,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4447374874685089174}
   - component: {fileID: 2762796868906962742}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: WhiteLight
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -386,7 +386,7 @@ GameObject:
   - component: {fileID: 6709861826094173092}
   - component: {fileID: 620289045605749102}
   - component: {fileID: 3002375903916365337}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Generator
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -868,7 +868,7 @@ GameObject:
   - component: {fileID: 3071439055861473730}
   - component: {fileID: 4465552350818883185}
   - component: {fileID: 5313921982634414951}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: OrangeLight
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1158,7 +1158,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1727935384325659981}
   - component: {fileID: 5040833613856804453}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: CloseLight
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1241,7 +1241,7 @@ GameObject:
   - component: {fileID: 1232208405190102315}
   - component: {fileID: 8912695381786446500}
   - component: {fileID: 3609821998721030278}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: SmallOrangeLight
   m_TagString: Untagged
   m_Icon: {fileID: 0}
