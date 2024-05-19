@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1938818238288859496}
   - component: {fileID: 3626855616621189212}
-  m_Layer: 0
+  m_Layer: 16
   m_Name: Hor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -95,7 +95,7 @@ GameObject:
   - component: {fileID: 924551550390268418}
   - component: {fileID: 3687676259035914865}
   - component: {fileID: 5986009738171236351}
-  m_Layer: 0
+  m_Layer: 16
   m_Name: MedBox
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -185,7 +185,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1089166749291665319}
-  m_Layer: 0
+  m_Layer: 16
   m_Name: Graphics
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -218,7 +218,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5744884825461350495}
   - component: {fileID: 6046119956963402990}
-  m_Layer: 0
+  m_Layer: 16
   m_Name: Square
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -301,7 +301,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3277840291941867271}
-  m_Layer: 0
+  m_Layer: 16
   m_Name: Box
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -335,7 +335,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4349804975196600251}
   - component: {fileID: 5714580978937952144}
-  m_Layer: 0
+  m_Layer: 16
   m_Name: Ver
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -418,7 +418,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 615575630384189623}
-  m_Layer: 0
+  m_Layer: 16
   m_Name: Cross
   m_TagString: Untagged
   m_Icon: {fileID: 0}
