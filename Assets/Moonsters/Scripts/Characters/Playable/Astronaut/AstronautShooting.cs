@@ -31,6 +31,7 @@ public class AstronautShooting : MonoBehaviour
     private int currentAmmo;
 
     public UnityEvent<int> ammoChanged;
+    public UnityEvent<int> maxAmmoChanged;
     
     public int CurrentAmmo
     {
@@ -42,7 +43,15 @@ public class AstronautShooting : MonoBehaviour
         get => currentAmmo;
     }
 
-    public int MaxAmmo => maxAmmo;
+    public int MaxAmmo
+    {
+        get => maxAmmo;
+        set 
+        {
+            maxAmmo = value;
+            maxAmmoChanged.Invoke(maxAmmo);
+        }
+    }
 
     public bool IsFullAmmo => CurrentAmmo == maxAmmo;
     

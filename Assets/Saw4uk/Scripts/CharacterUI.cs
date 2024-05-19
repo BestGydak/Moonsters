@@ -12,6 +12,7 @@ namespace Saw4uk.Scripts
         private void Awake()
         {
             astronautShooting.ammoChanged.AddListener(OnAmmoChanged);
+            astronautShooting.maxAmmoChanged.AddListener(OnAmmoChanged);
             OnAmmoChanged(astronautShooting.CurrentAmmo);
             maxAmmo = astronautShooting.MaxAmmo;
         }

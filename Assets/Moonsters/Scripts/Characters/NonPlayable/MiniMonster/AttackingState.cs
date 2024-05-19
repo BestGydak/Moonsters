@@ -32,6 +32,11 @@ namespace Moonsters
             attackCoroutine = monster.StartCoroutine(AttackCoroutine());
         }
 
+        public override void OnExit()
+        {
+            monster.StopCoroutine(attackCoroutine);
+        }
+
         private IEnumerator AttackCoroutine()
         {
             attacked?.Invoke();
