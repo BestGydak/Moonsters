@@ -343,9 +343,9 @@ MonoBehaviour:
   gun: {fileID: 8965867740736805637}
   gunSpriteRenderer: {fileID: 2298320311370379586}
   projectilePrefab: {fileID: 5797377924239137476, guid: bbee467c44b424142bb37df7cc775b2b, type: 3}
-  projectileSpeed: 25
-  shootingDelay: 0.5
-  maxAmmo: 10
+  projectileSpeed: 40
+  shootingDelay: 1.5
+  maxAmmo: 20
   ammoChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -784,7 +784,7 @@ MonoBehaviour:
   m_ComponentVersion: 1
   m_LightType: 3
   m_BlendStyleIndex: 0
-  m_FalloffIntensity: 0.7
+  m_FalloffIntensity: 0.785
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_Intensity: 1
   m_LightVolumeIntensity: 1
@@ -807,7 +807,7 @@ MonoBehaviour:
     m_Extent: {x: 0.9985302, y: 0.99853027, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
-  m_PointLightInnerRadius: 3.5
+  m_PointLightInnerRadius: 0
   m_PointLightOuterRadius: 6
   m_ShapeLightParametricSides: 5
   m_ShapeLightParametricAngleOffset: 0
@@ -976,7 +976,7 @@ PrefabInstance:
     - target: {fileID: 1940145677613132877, guid: 77c6c772bb711f24dbee881bece3161d, type: 3}
       propertyPath: m_Material
       value: 
-      objectReference: {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
+      objectReference: {fileID: 0}
     - target: {fileID: 2273015042287658733, guid: 77c6c772bb711f24dbee881bece3161d, type: 3}
       propertyPath: m_SortingOrder
       value: 100
@@ -988,14 +988,34 @@ PrefabInstance:
     - target: {fileID: 3349612920134159692, guid: 77c6c772bb711f24dbee881bece3161d, type: 3}
       propertyPath: m_Material
       value: 
-      objectReference: {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
+      objectReference: {fileID: 0}
+    - target: {fileID: 3914823521063679579, guid: 77c6c772bb711f24dbee881bece3161d, type: 3}
+      propertyPath: m_Layer
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 4095994508541439595, guid: 77c6c772bb711f24dbee881bece3161d, type: 3}
+      propertyPath: m_Layer
+      value: 15
+      objectReference: {fileID: 0}
     - target: {fileID: 5129256159237574685, guid: 77c6c772bb711f24dbee881bece3161d, type: 3}
       propertyPath: m_PresetInfoIsWorld
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 5510894169713756823, guid: 77c6c772bb711f24dbee881bece3161d, type: 3}
+      propertyPath: m_Layer
+      value: 15
+      objectReference: {fileID: 0}
     - target: {fileID: 6057923208604442039, guid: 77c6c772bb711f24dbee881bece3161d, type: 3}
       propertyPath: m_Name
       value: UnitInfoCanvas
+      objectReference: {fileID: 0}
+    - target: {fileID: 6057923208604442039, guid: 77c6c772bb711f24dbee881bece3161d, type: 3}
+      propertyPath: m_Layer
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 8466747164237350433, guid: 77c6c772bb711f24dbee881bece3161d, type: 3}
+      propertyPath: m_Layer
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 8750019987889237775, guid: 77c6c772bb711f24dbee881bece3161d, type: 3}
       propertyPath: m_Pivot.x
@@ -1115,7 +1135,7 @@ PrefabInstance:
     - target: {fileID: 230277246529941108, guid: 8354f306d2f0b6d48b5c141f142758ea, type: 3}
       propertyPath: m_Material
       value: 
-      objectReference: {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
+      objectReference: {fileID: 0}
     - target: {fileID: 1324547279899346222, guid: 8354f306d2f0b6d48b5c141f142758ea, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -1204,6 +1224,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2380493890319182930, guid: 8354f306d2f0b6d48b5c141f142758ea, type: 3}
+      propertyPath: m_Layer
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 3425810609831048290, guid: 8354f306d2f0b6d48b5c141f142758ea, type: 3}
+      propertyPath: m_Layer
+      value: 15
+      objectReference: {fileID: 0}
     - target: {fileID: 3532118159226454444, guid: 8354f306d2f0b6d48b5c141f142758ea, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -1223,10 +1251,18 @@ PrefabInstance:
     - target: {fileID: 4009018326184464245, guid: 8354f306d2f0b6d48b5c141f142758ea, type: 3}
       propertyPath: m_Material
       value: 
-      objectReference: {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
+      objectReference: {fileID: 0}
     - target: {fileID: 6171183651870017710, guid: 8354f306d2f0b6d48b5c141f142758ea, type: 3}
       propertyPath: m_Name
       value: Slider (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6171183651870017710, guid: 8354f306d2f0b6d48b5c141f142758ea, type: 3}
+      propertyPath: m_Layer
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 7827606306131248152, guid: 8354f306d2f0b6d48b5c141f142758ea, type: 3}
+      propertyPath: m_Layer
+      value: 15
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

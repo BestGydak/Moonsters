@@ -26,7 +26,7 @@ public class GunAmmoDropper : MonoBehaviour
         instance.transform.parent = null;
         var radians = Mathf.Deg2Rad*(gunRotator.rotation.eulerAngles.z-110);
         var vector = new Vector2((float)Math.Cos(radians)*randomModifier1, (float)Math.Sin(radians)*randomModifier2);
-        instance.AddForce(vector * Force,ForceMode2D.Impulse );
+        instance.AddForce(vector * Force,ForceMode2D.Impulse);
         instance.AddTorque(randomModifier1 * 5, ForceMode2D.Impulse);
     }
 
