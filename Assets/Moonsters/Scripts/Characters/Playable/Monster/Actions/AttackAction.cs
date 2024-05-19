@@ -9,9 +9,11 @@ namespace Moonsters
         [SerializeField] private int damage;
         [SerializeField] private float attackRadius;
         [SerializeField] private LayerMask hitBoxMask;
+        [SerializeField] private Animator animator;
 
         protected override void OnUse()
         {
+            animator.SetTrigger("Attack");
             var playerCollider = Physics2D
                 .OverlapCircleAll(transform.position, attackRadius, hitBoxMask)
                 .Where(collider => collider.CompareTag(TeamTags.Astronaut))
