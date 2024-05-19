@@ -42381,16 +42381,58 @@ PrefabInstance:
       propertyPath: AstronautHealth
       value: 
       objectReference: {fileID: 943406013}
+    - target: {fileID: 8342558568756291289, guid: 9d104b8d997bfc244826d435afd884fe, type: 3}
+      propertyPath: m_AngularDrag
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 306970997499452644, guid: 9d104b8d997bfc244826d435afd884fe, type: 3}
+      insertIndex: 3
+      addedObject: {fileID: 1036562925}
   m_SourcePrefab: {fileID: 100100000, guid: 9d104b8d997bfc244826d435afd884fe, type: 3}
 --- !u!1 &1036562915 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 306970997499452644, guid: 9d104b8d997bfc244826d435afd884fe, type: 3}
   m_PrefabInstance: {fileID: 1036562914}
   m_PrefabAsset: {fileID: 0}
+--- !u!58 &1036562925
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1036562915}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 0.93
 --- !u!1 &1055825022
 GameObject:
   m_ObjectHideFlags: 0
@@ -48992,6 +49034,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1641756158779846319, guid: d8920346cc33d7145bb51aebeaa8c026, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4970985163186461923, guid: d8920346cc33d7145bb51aebeaa8c026, type: 3}
       propertyPath: m_Name
       value: Astronaut
@@ -49012,6 +49058,10 @@ PrefabInstance:
       propertyPath: camera
       value: 
       objectReference: {fileID: 2109103451}
+    - target: {fileID: 9001395686437669065, guid: d8920346cc33d7145bb51aebeaa8c026, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

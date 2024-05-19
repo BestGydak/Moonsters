@@ -14,7 +14,7 @@ public class ChangeInTime : MonoBehaviour
 {
     [SerializeField] private UnityEvent<float> valueToChange;
     [SerializeField] private float timeToChange;
-    [SerializeField] private TypeEasingFunctions typeEasingFunctions;
+    [SerializeField] private AnimationCurve animationCurve;
     [SerializeField] private Vector2 fromTo;
     [SerializeField] private bool infinity;
 
@@ -33,7 +33,7 @@ public class ChangeInTime : MonoBehaviour
 
     private void Awake()
     {
-        currentFunction = functionDictionary[typeEasingFunctions];
+        //currentFunction = functionDictionary[typeEasingFunctions];
         StartCoroutine(ChangeValueInTime());
     }
 
@@ -41,10 +41,10 @@ public class ChangeInTime : MonoBehaviour
     {
         var progress = 0f;
 
-        while (progress < 1)
+        while (progress < 1 || infinity)
         {
             progress += Time.deltaTime / timeToChange;
-            valueToChange.Invoke(Mathf.Lerp(fromTo.x, fromTo.y, currentFunction.Invoke(progress)));
+            valueToChange.Invoke(Mathf.LerpUnclamped(fromTo.x, fromTo.y, animationCurve.Evaluate(progress)));
             yield return null;
         }
     }
