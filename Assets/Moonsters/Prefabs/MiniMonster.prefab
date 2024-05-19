@@ -148,6 +148,7 @@ MonoBehaviour:
   sba: {fileID: 3091159586320373934}
   distanceToReachNode: 0.5
   findPathDelayInSeconds: 0.1
+  spriteRenderer: {fileID: 8230640109916025018}
   sfxs:
   - {fileID: 8087097153953592454, guid: b3b043fde36774e41928edb65f611054, type: 3}
   - {fileID: 8872546945689255334, guid: 84fa4a962b281e34286d68caa8ac0c10, type: 3}
@@ -491,7 +492,9 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 7287616347345182772, guid: 77c6c772bb711f24dbee881bece3161d, type: 3}
+    - {fileID: 5860119541031872378, guid: 77c6c772bb711f24dbee881bece3161d, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 77c6c772bb711f24dbee881bece3161d, type: 3}

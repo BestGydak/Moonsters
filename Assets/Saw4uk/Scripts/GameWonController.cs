@@ -1,6 +1,8 @@
+using Moonsters;
 using System;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.SceneManagement;
 
 namespace Saw4uk.Scripts
 {
@@ -37,6 +39,11 @@ namespace Saw4uk.Scripts
         private void GeneratorOnActivated()
         {
             ActivatedGeneratorsAmount += 1;
+        }
+
+        private void SetWinScene()
+        {
+            SceneManager.LoadScene((int)SceneID.AstronautWin);
         }
     }
 }

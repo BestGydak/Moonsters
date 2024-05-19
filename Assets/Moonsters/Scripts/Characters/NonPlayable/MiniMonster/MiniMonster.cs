@@ -1,5 +1,6 @@
 using Pathfinding;
 using SBA;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -12,7 +13,7 @@ namespace Moonsters
         [SerializeField] private float distanceToAttack;
         [SerializeField] private float distanceToApproach;
         [SerializeField] private Animator Animator;
-
+        [SerializeField] private float spawnDelay;
         [Header("Attacking Settings")]
         [SerializeField] private Health healthTarget;
         [SerializeField] private int damage;
@@ -24,6 +25,8 @@ namespace Moonsters
         [SerializeField] private float distanceToReachNode;
         [SerializeField] private float findPathDelayInSeconds;
 
+        [SerializeField] private SpriteRenderer spriteRenderer;
+        
         [Header("SFX Settings")]
         [SerializeField] private List<SFX> sfxs;
         
@@ -62,7 +65,12 @@ namespace Moonsters
         private void Start()
         {
             InitializeStateMachine();
-            stateMachine.SetState(attackingState);
+            StartCoroutine(Coroutine());
+            IEnumerator Coroutine()
+            {
+                yield return new WaitForSeconds(spawnDelay);
+                stateMachine.SetState(attackingState);
+            }
         }
 
         private void Update()
@@ -90,8 +98,14 @@ namespace Moonsters
                 distanceToReachNode, 
                 findPathDelayInSeconds);
             attackingState = new(attackCooldown, damage, this, healthTarget);
+            attackingState.attacked += OnAttacked;
             stateMachine.AddTransition(approachingState, attackingState, () => DistanceToTarget() <= distanceToAttack);
             stateMachine.AddTransition(attackingState, approachingState, () => DistanceToTarget() >= distanceToApproach);
+        }
+
+        private void OnAttacked()
+        {
+            Animator.SetTrigger(healthTarget.transform.position.x < transform.position.x ? "AttackLeft" : "AttackRight");
         }
 
         public void Die()
