@@ -14,7 +14,10 @@ namespace Moonsters
         [SerializeField] private float normalSpeed;
         [SerializeField] private Slider staminaSlider;
         [SerializeField] private Animator Animator;
-
+        [SerializeField] private SpriteRenderer characterSpriteRenderer;
+        [SerializeField] private SpriteRenderer gunSpriteREnderer;
+        private Action updateAction;
+        
         [Header("Sprint Settings")]
         [SerializeField] private float tiredSpeed;
         [SerializeField] private float sprintSpeed;
@@ -92,7 +95,7 @@ namespace Moonsters
             staminaSlider.minValue = 0;
             staminaSlider.maxValue = maxStamina;
             staminaSlider.value = 0;
-            
+            updateAction = () => gunSpriteREnderer.sortingOrder = characterSpriteRenderer.sortingOrder + 1;
         }
 
         private void Update()
@@ -101,6 +104,7 @@ namespace Moonsters
             Animator.SetFloat("Horizontal", Direction.y);
             Animator.SetFloat("Vertical", Direction.x);
             Animator.SetFloat("Speed", Speed);
+            updateAction.Invoke();
         }
 
         private void FixedUpdate()
@@ -108,6 +112,16 @@ namespace Moonsters
             stateMachine.OnPhysics();
         }
 
+        public void SetGunSperedi()
+        {
+            updateAction = () => gunSpriteREnderer.sortingOrder = characterSpriteRenderer.sortingOrder + 1;
+        }
+
+        public void SetGunSzadi()
+        {
+            updateAction = () => gunSpriteREnderer.sortingOrder = characterSpriteRenderer.sortingOrder - 1;
+        }
+        
         private void InitializeStateMachine()
         {
             stateMachine = new();
