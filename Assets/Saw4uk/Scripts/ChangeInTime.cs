@@ -16,6 +16,7 @@ public class ChangeInTime : MonoBehaviour
     [SerializeField] private float timeToChange;
     [SerializeField] private TypeEasingFunctions typeEasingFunctions;
     [SerializeField] private Vector2 fromTo;
+    [SerializeField] private bool infinity;
 
     private static readonly Dictionary<TypeEasingFunctions, Func<float, float>> functionDictionary =
         new()
