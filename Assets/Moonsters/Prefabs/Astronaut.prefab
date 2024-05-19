@@ -315,6 +315,8 @@ MonoBehaviour:
   normalSpeed: 8
   staminaSlider: {fileID: 339541823402599399}
   Animator: {fileID: 3548483406080941641}
+  characterSpriteRenderer: {fileID: 5363238152746616239}
+  gunSpriteREnderer: {fileID: 2298320311370379586}
   tiredSpeed: 5
   sprintSpeed: 15
   maxStamina: 25
