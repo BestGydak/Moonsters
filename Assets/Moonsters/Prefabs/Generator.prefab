@@ -253,7 +253,7 @@ GameObject:
   - component: {fileID: 8302513054949438967}
   - component: {fileID: 8951851522129263333}
   - component: {fileID: 8797823056812873100}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: ActionOblast
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -282,7 +282,7 @@ SpriteRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2089078763161436587}
-  m_Enabled: 0
+  m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0
   m_DynamicOccludee: 1
@@ -736,7 +736,7 @@ GameObject:
   - component: {fileID: 2156148745490712959}
   - component: {fileID: 8923165470343849344}
   - component: {fileID: 3573198935621257578}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Oblast
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -765,7 +765,7 @@ SpriteRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4484205080682321729}
-  m_Enabled: 0
+  m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0
   m_DynamicOccludee: 1
