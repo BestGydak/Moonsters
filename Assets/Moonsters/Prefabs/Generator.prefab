@@ -385,6 +385,7 @@ GameObject:
   - component: {fileID: 5257018786524685729}
   - component: {fileID: 6709861826094173092}
   - component: {fileID: 620289045605749102}
+  - component: {fileID: 3002375903916365337}
   m_Layer: 0
   m_Name: Generator
   m_TagString: Untagged
@@ -445,9 +446,9 @@ CircleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0, y: -1.1688232}
   serializedVersion: 2
-  m_Radius: 1.4
+  m_Radius: 0.4008484
 --- !u!114 &620289045605749102
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -463,8 +464,24 @@ MonoBehaviour:
   generatorField: {fileID: 3573198935621257578}
   actionField: {fileID: 8797823056812873100}
   helpGameObject: {fileID: 2330119594072248488}
+  arrowToDestroy: {fileID: 0}
   secondsToLoad: 10
   slider: {fileID: 8240141784554248189}
+--- !u!114 &3002375903916365337
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2171352414455076628}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5dda571e3cc3d0d4390cce3f055b401f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spriteRenderer: {fileID: 8405846105626072821}
+  offset: -1
+  isStatic: 1
 --- !u!1 &2330119594072248488
 GameObject:
   m_ObjectHideFlags: 0
